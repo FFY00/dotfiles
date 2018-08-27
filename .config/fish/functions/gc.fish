@@ -1,4 +1,3 @@
-# Defined in - @ line 2
 function gc --description 'Change directory to the repo after clone it'
 	set -l repo $argv[1]
     set -l name (basename $repo .git)

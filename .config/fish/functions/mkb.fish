@@ -1,4 +1,6 @@
 function mkb
-	command mkdir build
+	if test ! -e build
+		command mkdir build
+	end
 	cd build
 end
