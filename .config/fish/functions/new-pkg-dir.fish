@@ -3,6 +3,10 @@ function new-pkg-dir
 		echo "Missing package name..."
 		return
 	end
+	if test -d $argv[1]
+		echo "Directory already exists..."
+		return
+	end
 	set -lx dirs $argv[1]/{repos,trunk}
 	for dir in $dirs
 		if test ! -d $dir
@@ -10,6 +14,15 @@ function new-pkg-dir
 		end
 	end
 	cd $argv[1]
-	svn add . 2> /dev/null
+
+	# Setup svn
+	command svn add . 2> /dev/null
+
 	cd trunk
+
+	# Setup PKGBUILD
+	touch PKGBUILD
+	echo "# \$Id\$"\n"# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>" > PKGBUILD
+	command svn add PKGBUILD
+	command svn propset svn:keywords "Id" PKGBUILD
 end
