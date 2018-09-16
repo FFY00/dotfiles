@@ -17,12 +17,14 @@ function new-pkg-dir
 
 	# Setup svn
 	command svn add . 2> /dev/null
+	svn commit -m "add root structure"
 
 	cd trunk
 
 	# Setup PKGBUILD
 	touch PKGBUILD
-	echo "# \$Id\$"\n"# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>" > PKGBUILD
+#	echo "# \$Id\$"\n"# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>" > PKGBUILD
+	echo "# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>" > PKGBUILD
 	command svn add PKGBUILD
-	command svn propset svn:keywords "Id" PKGBUILD
+#	command svn propset svn:keywords "Id" PKGBUILD
 end
