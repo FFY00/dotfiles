@@ -1,3 +1,4 @@
+# Defined in /tmp/fish.rpWpb7/axel.fish @ line 2
 function axel
-	command axel -v -a $argv
+	command axel -a $argv
 end

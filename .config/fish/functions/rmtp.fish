@@ -1,0 +1,3 @@
+function rmtp
+	rmpt
+end
