@@ -1,4 +1,4 @@
 function rmpt
 	rmpkg
-rmtar
+	rmtar
 end

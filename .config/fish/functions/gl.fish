@@ -1,3 +1,3 @@
 function gl
-	command git log --color=always | less -r
+	command git log --pretty=oneline --color=always | less -r
 end
