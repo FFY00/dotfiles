@@ -1,0 +1,45 @@
+! Do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! Scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! Scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+! Support UTF8
+URxvt*termName: rxvt-unicode
+URxvt.letterSpace: 1
+
+! Font
+URxvt.font: xft:camingocode:size=12, xft:Symbola, xft:Noto Emoji, font: xft:Inconsolata Nerd Font Mono
+
+! Color
+! special
+*.foreground:   #a1b0b8
+*.background:   #263238
+*.cursorColor:  #a1b0b8
+! black
+*.color0:       #252525
+*.color8:       #708284
+! red
+*.color1:       #ff5252
+*.color9:       #ff5252
+! green
+*.color2:       #c3d82c
+*.color10:      #c3d82c
+! yellow
+*.color3:       #ffc135
+*.color11:      #ffc135
+! blue
+*.color4:       #42a5f5
+*.color12:      #42a5f5
+! magenta
+*.color5:       #d81b60
+*.color13:      #d81b60
+! cyan
+*.color6:       #00acc1
+*.color14:      #00acc1
+! white
+*.color7:       #f5f5f5
+*.color15:      #f5f5f5

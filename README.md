@@ -11,6 +11,11 @@ My personal dotfiles
    * (Usage: `sudo ./update_mirrors.sh`)
    * This is a simple script to update the mirrors on an Arch Linux installation. I run this as a cron job.
 
+#### .Xdefault
+Urxvt config and material colorscheme.
+
+Run `xrdb ~/.Xdefaults` for the urxvt config to take effect.
+
 #### Fish
 Includes my custom fish shell functions.
 
