@@ -1,0 +1,9 @@
+{
+	"settings": {
+		"enableEmojiHovering": true,
+		"enableEmojiStatisticsButton": true
+	},
+	"amounts": {
+		"hoverDelay": 1000
+	}
+}

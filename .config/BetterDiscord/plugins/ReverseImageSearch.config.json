@@ -1,0 +1,18 @@
+{
+	"engines": {
+		"Baidu": true,
+		"Bing": true,
+		"Google": true,
+		"IQDB": true,
+		"Reddit": true,
+		"SauceNAO": true,
+		"Sogou": true,
+		"TinEye": true,
+		"WhatAnime": true,
+		"Yandex": true,
+		"_all": true
+	},
+	"changelog": {
+		"currentversion": "3.4.2"
+	}
+}

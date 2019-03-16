@@ -1,0 +1,32 @@
+{
+	"servers": {},
+	"resets": {
+		"reset1": true
+	},
+	"pins": {
+		"242094594181955585": {
+			"242122752436338688": {
+				"503865107462488083_0": {
+					"accessory": "",
+					"addedat": 1540241378572,
+					"author_id": "171266915304472577",
+					"author_name": "MrSmith33",
+					"avatar": "https://cdn.discordapp.com/avatars/171266915304472577/f20a1331cf15f44d7d6689014259128f.webp?size=128",
+					"channel_id": "242122752436338688",
+					"channel_name": "programming",
+					"color": "#9b59b6",
+					"content": "<@281501623811964928>  <@138069134343667712> \nGeneral literature:\n```\nAdvanced Compiler Design and Implementation, Steven.S.Muchnick\nCompilers: Principles, Techniques, and Tools\nThe Static Single Assignment Book\nCompiler Design -- Building An Optimizing Compiler\nEngineering a Compiler, Cooper K., Torczon L. - Second Edition - 2011\nLanguage Implementation Patterns\n```\n<http://craftinginterpreters.com/>",
+					"guild_id": "242094594181955585",
+					"guild_name": "D Code Club",
+					"id": "503865107462488083",
+					"markup": "<span tabindex=\"0\" class=\"mention wrapperHover-1GktnT wrapper-3WhCwL da-mention da-wrapperHover da-wrapper\" role=\"button\" style=\"color: rgb(155, 89, 182) !important; background: rgba(155, 89, 182, 0.0980392) !important;\">@FFY00</span>  <span tabindex=\"0\" class=\"mention wrapperHover-1GktnT wrapper-3WhCwL da-mention da-wrapperHover da-wrapper\" role=\"button\" style=\"color: rgb(155, 89, 182) !important; background: rgba(155, 89, 182, 0.0980392) !important;\">@ShapeshiftingLizard</span> \nGeneral literature:\n<pre><code class=\"scrollbarGhost-2F9Zj2 scrollbar-3dvm_9 hljs da-scrollbarGhost da-scrollbar da-hljs\">Advanced Compiler Design and Implementation, Steven.S.Muchnick\nCompilers: Principles, Techniques, and Tools\nThe Static Single Assignment Book\nCompiler Design -- Building An Optimizing Compiler\nEngineering a Compiler, Cooper K., Torczon L. - Second Edition - 2011\nLanguage Implementation Patterns</code></pre>\n<a tabindex=\"0\" title=\"http://craftinginterpreters.com/\" class=\"anchor-3Z-8Bb anchorUnderlineOnHover-2ESHQB da-anchor da-anchorUnderlineOnHover\" href=\"http://craftinginterpreters.com/\" rel=\"noreferrer noopener\" target=\"_blank\" role=\"button\">http://craftinginterpreters.com/</a>",
+					"pos": 0,
+					"timestamp": 1540201202980
+				}
+			}
+		}
+	},
+	"changelog": {
+		"currentversion": "1.7.6"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"settings": {
+		"addInUserPopout": true,
+		"addInUserProfil": true,
+		"displayTime": true,
+		"displayDate": true,
+		"cutSeconds": false,
+		"forceZeros": false,
+		"otherOrder": false
+	},
+	"choices": {
+		"creationDateLang": "$discord"
+	},
+	"changelog": {
+		"currentversion": "1.2.6"
+	}
+}

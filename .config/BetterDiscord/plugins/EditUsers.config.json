@@ -1,0 +1,17 @@
+{
+	"settings": {
+		"changeInChatWindow": true,
+		"changeInMentions": true,
+		"changeInVoiceChat": true,
+		"changeInMemberList": true,
+		"changeInRecentDms": true,
+		"changeInDmsList": true,
+		"changeInDmHeader": true,
+		"changeInDmCalls": true,
+		"changeInTyping": true,
+		"changeInFriendList": true,
+		"changeInUserPopout": true,
+		"changeInUserProfil": true,
+		"changeInUserAccount": true
+	}
+}

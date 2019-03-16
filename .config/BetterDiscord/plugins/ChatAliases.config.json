@@ -1,0 +1,13 @@
+{
+	"settings": {
+		"addContextMenu": true,
+		"addAutoComplete": true
+	},
+	"words": {},
+	"changelog": {
+		"currentversion": "1.9.9"
+	},
+	"amounts": {
+		"minAliasLength": 2
+	}
+}

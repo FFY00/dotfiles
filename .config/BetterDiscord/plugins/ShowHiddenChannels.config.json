@@ -1,0 +1,23 @@
+{
+	"settings": {
+		"showAllowedRoles": true,
+		"showAllowedUsers": true,
+		"showCategory": true,
+		"showDeniedRoles": true,
+		"showDeniedUsers": true,
+		"showForNormal": true,
+		"showOverWrittenRoles": true,
+		"showText": true,
+		"showTopic": true,
+		"showVoice": true
+	},
+	"categorystatus": {
+		"242094594181955585": true
+	},
+	"amounts": {
+		"hoverDelay": 0
+	},
+	"changelog": {
+		"currentversion": "2.4.3"
+	}
+}

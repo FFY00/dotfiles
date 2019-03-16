@@ -1,0 +1,16 @@
+{
+    "settings": {
+        "popout": {
+            "username": true,
+            "avatar": true
+        },
+        "statusPicker": {
+            "username": true,
+            "avatar": true
+        },
+        "nickname": {
+            "showNickname": true,
+            "oppositeOnHover": true
+        }
+    }
+}

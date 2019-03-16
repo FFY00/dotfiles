@@ -1,0 +1,127 @@
+//META{"name":"NotAnotherAnimeThemeDCSL","description":"Anime theme made by puckzxz#2080 and Quake#1470, make sure you're up to date at https://goo.gl/jfR9BS , Get support here https://discord.gg/FdZhbjY","author":"puckzxz#2080 & Quake#1470","version":"2.0"}*//{}
+@import url(https://8xs4qxklp8.execute-api.us-east-2.amazonaws.com/release/gorawgit?giturl=/puckzxz/NotAnotherAnimeTheme/master/css/dcsl.css);
+
+
+/* To make editing this theme easier I recommend using Notepad++ , you can download it for free here - https://notepad-plus-plus.org/download/ */
+
+
+/* Any images you use MUST end with .jpg or .png or any other image extension */
+/* This is NOT a valid link, https://imgur.com/a/ycjL2 */
+/* THIS IS A VALID LINK https://i.imgur.com/rCqnrQ7.jpg */
+
+/* If you find an image I would STRONGLY recommend rehosting the image on imgur https://imgur.com/upload */
+
+
+:root {
+    /* Edit this to change your background */
+    --background-image: url(https://i.imgur.com/h0YyOD7.png); /* format is url(IMAGE URL HERE) */
+    /* Edit this to change your friends icon picture, picture  */
+    --friends-icon: url(https://cdn.discordapp.com/avatars/281501623811964928/0295dbe9620ed2e23c4f0f87d8ece30b.png); /* format is url(IMAGE URL HERE) */
+    /* Edit this to change your friends icon picture, position  */
+    --friends-icon-position: center center; /* default: center center */
+    /* Edit this to change your friends icon picture, zoom  */
+    --friends-icon-zoom: 100%; /* default: 100% */
+    /* Change the main color */
+    --main-color: #3498db; /* default: rgb(67, 181, 129); */
+    /* Chande global transparency */
+    --main-transparency: rgba(0, 0, 0, 0.1); /* default: rgba(0, 0, 0, 0.8); */ 
+
+    /* Change the unread server animation. Replace it with "none" in order to remove any animations */
+    --unread-server-animation: rainbow;
+    /* Change background color when you hover members or friends */
+    --hover-list-bg-color: rgba(255, 255, 255, .1); /* default: rgba(255,255,255, .15) */
+    /* Change the tiny border lines color */
+    --border-lines-color: hsla(0, 0%, 100%, 0); /* default: hsla(0,0%,100%,.1);*/
+    /* Change the scroll bar color appearence */
+    --scroll-bar-color: rgba(255, 255, 255, .15); /* default: rgba(255,255,255, .15);*/
+
+    /* Change chat messages font size, you can use any unit: px, em, rem, %, etc. */
+    --font-size: 16px; /* default: 16px */
+    /* Edit this to change the color of a selected text or voice join */
+    --selected-text-voice-color: #3498db; /* default: #f6f6f7 */
+    /* Edit this to change the color when you hover over a text channel */
+    --text-hover-color: #67b2e4; /* default: #b9bbbe */
+    /* Edit this to change the color when you hover over a voice channel */
+    --voice-hover-color: #67b2e4; /* default: #f6f6f7 */
+    /* Edit this to change the color of an unread text channel color */
+    --unread-text-color: #2980b9; /* default: #dcddde */
+    
+    /* Write "transparent" in order to make the options sections with the same look as the theme  */
+    --options-transparency: transparent; /* default: #2f3136 */
+}
+
+/* ADD CODE BELOW TO CUSTOMIZE THE THEME */
+
+/* Make the message box transparent */
+.theme-dark .inner-zqa7da {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* Remove the bar on top of the message box */
+.theme-dark .channelTextArea-rNsIhG {
+    border-top: rgba(0, 0, 0, 0);
+}
+
+/* Make the code sction gray and round again */
+.theme-dark .markup-2BOw-j pre {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(47, 49, 54, 0.5);
+    border-radius: 8px;
+}
+
+.theme-dark .markup-2BOw-j code, .theme-dark .markup-2BOw-j code.inline {
+    border-radius: 5.5px !important;
+}
+
+/* Hide header shadow line */
+.title-3qD0b-,
+.searchBar-2_Yu-C,
+.channels-Ie2l6A .container-2Rl01u .header-2o-2hj {
+    box-shadow: none !important;
+}
+
+/* Change scrollbar transparency */
+::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-track,
+.bda-dark .emoji-picker .scroller::-webkit-scrollbar,
+.bda-dark .emoji-picker .scroller::-webkit-scrollbar-track,
+.bda-dark .emoji-picker .scroller::-webkit-scrollbar-track-piece,
+.bda-dark .emojiPicker-3m1S-j .scroller-3vODG7::-webkit-scrollbar,
+.bda-dark .emojiPicker-3m1S-j .scroller-3vODG7::-webkit-scrollbar-track,
+.bda-dark .emojiPicker-3m1S-j .scroller-3vODG7::-webkit-scrollbar-track-piece,
+.bda-dark #bda-qem-twitch-container .scroller::-webkit-scrollbar,
+.bda-dark #bda-qem-twitch-container .scroller::-webkit-scrollbar-track,
+.bda-dark #bda-qem-twitch-container .scroller::-webkit-scrollbar-track-piece,
+.bda-dark #bda-qem-favourite-container .scroller::-webkit-scrollbar,
+.bda-dark #bda-qem-favourite-container .scroller::-webkit-scrollbar-track,
+.bda-dark #bda-qem-favourite-container .scroller::-webkit-scrollbar-track-piece,
+.bda-dark #pubs-container .scroller::-webkit-scrollbar,
+.bda-dark #pubs-container .scroller::-webkit-scrollbar-track,
+.bda-dark #pubs-container .scroller::-webkit-scrollbar-track-piece {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb,
+.bda-dark #bda-qem-twitch-container .scroller::-webkit-scrollbar-thumb,
+.bda-dark #bda-qem-favourite-container .scroller::-webkit-scrollbar-thumb,
+.bda-dark .emoji-picker .scroller::-webkit-scrollbar-thumb,
+.bda-dark .emojiPicker-3g68GS .scroller-3vODG7::-webkit-scrollbar-thumb,
+.bda-dark #pubs-container .scroller::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color) !important;
+    border-color: transparent !important;
+}
+
+/* Add background image to user popouts */
+.userPopout-3XzG_A {
+    background: url(https://i.imgur.com/kvPnkJY.jpg) center/cover no-repeat;
+}
+
+.userPopout-3XzG_A .role-2irmRk,
+.userPopout-3XzG_A .header-2BwW8b,
+.userPopout-3XzG_A .body-3iLsc4,
+.userPopout-3XzG_A .footer-1fjuF6,
+.userPopout-3XzG_A .quickMessage-1yeL4E,
+.userPopout-3XzG_A .note-3kmerW textarea:focus {
+    background: rgba(0, 0, 0, 0) !important;
+}

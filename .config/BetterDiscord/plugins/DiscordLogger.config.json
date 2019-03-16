@@ -1,0 +1,378 @@
+{
+    "logs": {
+        "friendsList": [
+            "101656373493772288",
+            "107193662579986432",
+            "108623010520383488",
+            "128040553521610752",
+            "128145900437635072",
+            "136290011124334592",
+            "149546579609649152",
+            "176148780649807873",
+            "178806549710503936",
+            "193242392298651648",
+            "205566766661763073",
+            "206383620531683328",
+            "207920750160642050",
+            "221283133125820416",
+            "234282620450504705",
+            "236214930792120341",
+            "240612292511793153",
+            "250536262119849985",
+            "267632689639718912",
+            "269844815963750401",
+            "269969478610190336",
+            "300253382101303296",
+            "300294597429690368",
+            "314476982190604290",
+            "315604501103116290",
+            "328983594775085067",
+            "349324692584398859",
+            "350791704024186897",
+            "360043649662189588",
+            "365511876270096396"
+        ],
+        "log": [
+            [
+                "4/14/2018",
+                "6:22:15 PM",
+                "CTF & Netsec was removed from the server list."
+            ],
+            [
+                "4/14/2018",
+                "6:52:58 PM",
+                ""
+            ],
+            [
+                "4/14/2018",
+                "8:50:53 PM",
+                "BetterDiscord was removed from the server list."
+            ],
+            [
+                "4/15/2018",
+                "5:48:08 PM",
+                "BetterDiscord was removed from the server list."
+            ],
+            [
+                "4/21/2018",
+                "6:21:19 PM",
+                "BetterDiscord was removed from the server list."
+            ],
+            [
+                "4/21/2018",
+                "10:29:48 PM",
+                "BetterDiscord was removed from the server list."
+            ],
+            [
+                "4/22/2018",
+                "8:06:11 AM",
+                "DashForLife’s Discord was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "3:21:48 PM",
+                "BetterDiscord was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "3:21:48 PM",
+                "IntellectualCrafters was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "3:21:52 PM",
+                "Outcasts of Reddit was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "3:23:25 PM",
+                "Xiaomi Mi 5 Community was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "3:23:25 PM",
+                "BuddyTeam | Comunidade was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "3:23:26 PM",
+                "Cactus was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "3:23:28 PM",
+                "•●AnubisCore●• (-) •●FFY00●• was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "3:48:14 PM",
+                "D Code Club was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "4:25:10 PM",
+                "BetterDiscord was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "4:25:12 PM",
+                "Outcasts of Reddit was removed from the server list."
+            ],
+            [
+                "4/23/2018",
+                "4:25:12 PM",
+                "IntellectualCrafters was removed from the server list."
+            ],
+            [
+                "4/26/2018",
+                "9:52:51 PM",
+                "WifiSpy#5908 was removed from the friends list."
+            ],
+            [
+                "4/30/2018",
+                "6:06:52 PM",
+                "BetterDiscord2 was removed from the server list."
+            ],
+            [
+                "4/30/2018",
+                "7:13:21 PM",
+                "BetterDiscord2 was removed from the server list."
+            ]
+        ],
+        "serverList": [
+            [
+                "411884070939656192",
+                "Nerd Squad",
+                "https://cdn.discordapp.com/icons/411884070939656192/c409b798dba9a375f94b2fb13a29dd8b.png"
+            ],
+            [
+                "242094594181955585",
+                "D Code Club",
+                "https://cdn.discordapp.com/icons/242094594181955585/eeb5968a2d2e67ba8f53b55be901ef55.png"
+            ],
+            [
+                "270636444723183628",
+                "Cactus",
+                "https://cdn.discordapp.com/icons/270636444723183628/9fe6587e8be05a783163b6ff8cc8afbe.png"
+            ],
+            [
+                "350229534832066572",
+                "Aurora Framework",
+                "https://cdn.discordapp.com/icons/350229534832066572/e3caef9d915a860eb641cea5614188d8.png"
+            ],
+            [
+                "363733264688611339",
+                "MyriadRF",
+                "https://cdn.discordapp.com/icons/363733264688611339/42e00d53e9889931e23ed6746610d230.png"
+            ],
+            [
+                "281017054549508098",
+                "LostCarrier.Online",
+                "https://cdn.discordapp.com/icons/281017054549508098/ab8f934c542027fc35eadf398a25619f.png"
+            ],
+            [
+                "302893570862612482",
+                "0x00sec",
+                "https://cdn.discordapp.com/icons/302893570862612482/8e189dca4ac2d7e5072306bebbe92440.png"
+            ],
+            [
+                "433126615388651530",
+                "Shadowhunters' Wiki",
+                "https://cdn.discordapp.com/icons/433126615388651530/cc12b3a0700e7c0fb649337ccbaee2e5.png"
+            ],
+            [
+                "86004744966914048",
+                "BetterDiscord",
+                "https://cdn.discordapp.com/icons/86004744966914048/292e7f6bfff2b71dfd13e508a859aedd.png"
+            ],
+            [
+                "313729457112350720",
+                "MTRUCKS",
+                "https://cdn.discordapp.com/icons/313729457112350720/e2b779446cc502f9c752eb6511c36757.png"
+            ],
+            [
+                "349857236656324608",
+                "TheCherno Server",
+                "https://cdn.discordapp.com/icons/349857236656324608/7e835f3fab342ed36f8eb88ae5482529.png"
+            ],
+            [
+                "420194361381355521",
+                "CTF & Netsec",
+                "https://cdn.discordapp.com/icons/420194361381355521/9a9985aebdc73fbb816a1183a27b2e7f.png"
+            ],
+            [
+                "265499275088232448",
+                "{TSC Official Discord}",
+                "https://cdn.discordapp.com/icons/265499275088232448/bd1b90d3a2b9fbbb4c869c9d9c02b2e3.png"
+            ],
+            [
+                "203559236729438208",
+                "LMMS",
+                "https://cdn.discordapp.com/icons/203559236729438208/92712c2b056727a42e9267e84b9f5861.png"
+            ],
+            [
+                "391398885819547652",
+                "Reverse Engineering",
+                "https://cdn.discordapp.com/icons/391398885819547652/547e7442c0584f396ec6edba45314abd.png"
+            ],
+            [
+                "327254708534116352",
+                "adafruit",
+                "https://cdn.discordapp.com/icons/327254708534116352/7f39e83176938068f50763e90cc0fe74.png"
+            ],
+            [
+                "303210552262656012",
+                "Celebrity Heaven",
+                "https://cdn.discordapp.com/icons/303210552262656012/3fbf3b90bde9a582fcba1a5e4c3ee75b.png"
+            ],
+            [
+                "399295740129705993",
+                "Invisible Web",
+                "https://cdn.discordapp.com/icons/399295740129705993/755ee541371c507d11da8daa01517b08.png"
+            ],
+            [
+                "409548055537385474",
+                "UIUC Computer Science Lab",
+                "https://cdn.discordapp.com/icons/409548055537385474/3a6e812a26bb791e8b44e12a2f6ceab3.png"
+            ],
+            [
+                "356235116218941440",
+                "Doh's Discord Bots",
+                "https://cdn.discordapp.com/icons/356235116218941440/6e7606fa23399a6c94d69915e865b897.png"
+            ],
+            [
+                "369103292435005450",
+                "Deobfuscation",
+                "null"
+            ],
+            [
+                "278920191751094273",
+                "Outcasts of Reddit",
+                "https://cdn.discordapp.com/icons/278920191751094273/356179f825dca0fbbfd0e08563777c09.png"
+            ],
+            [
+                "199959864854839296",
+                "urbandictionary",
+                "https://cdn.discordapp.com/icons/199959864854839296/7e9cb172f23f4b78d3b026ef89c18294.png"
+            ],
+            [
+                "347845119279628292",
+                "Addons4Kodi Help",
+                "https://cdn.discordapp.com/icons/347845119279628292/d74fd9d003625fd0187252d0478a2980.png"
+            ],
+            [
+                "319097580812500994",
+                "Kodi Discord Server",
+                "https://cdn.discordapp.com/icons/319097580812500994/b3667dd483fb21db4aa6589b89cafd10.png"
+            ],
+            [
+                "279318092792856576",
+                "Hrmtc Underground",
+                "https://cdn.discordapp.com/icons/279318092792856576/bc2cabe583922fc894b8cfadfb7093c8.png"
+            ],
+            [
+                "351370585999278090",
+                "GlitzMC",
+                "https://cdn.discordapp.com/icons/351370585999278090/431130e235fa8e71c0bbcaf3933d84d8.png"
+            ],
+            [
+                "354800035399204874",
+                "MINECRAFT",
+                "https://cdn.discordapp.com/icons/354800035399204874/8783b76ab8c787a62e9efa67781eac71.png"
+            ],
+            [
+                "335560271089238016",
+                "Deob",
+                "null"
+            ],
+            [
+                "349979005450977283",
+                "Shadows of Shaema",
+                "https://cdn.discordapp.com/icons/349979005450977283/28dee24328debc1116556b7fd2af55e9.png"
+            ],
+            [
+                "329723567916843008",
+                "Xiaomi Mi 5 Community",
+                "https://cdn.discordapp.com/icons/329723567916843008/7a0488accb1b801089bba4e8211252a4.png"
+            ],
+            [
+                "319173300653916160",
+                "BuddyTeam | Comunidade",
+                "https://cdn.discordapp.com/icons/319173300653916160/f5e387933378a5745a2e2a8ad5aeef89.png"
+            ],
+            [
+                "268444645527126017",
+                "IntellectualCrafters",
+                "https://cdn.discordapp.com/icons/268444645527126017/bd9ba35b33d0556d56a80cbdb02b4ec7.png"
+            ],
+            [
+                "266287234393702400",
+                "HomeAutomation",
+                "https://cdn.discordapp.com/icons/266287234393702400/37d62b1ca71e8d07dcc21582c1a3b834.png"
+            ],
+            [
+                "245949672038989824",
+                "Nitro The Bot",
+                "https://cdn.discordapp.com/icons/245949672038989824/69113c5c79aa6b162e28a2126751f0d3.png"
+            ],
+            [
+                "238666723824238602",
+                "Programming Discussions",
+                "https://cdn.discordapp.com/icons/238666723824238602/a95eb9cccc5bdb5a6449c6096e4c727b.png"
+            ],
+            [
+                "231548941492027393",
+                "Yappy Hub",
+                "https://cdn.discordapp.com/icons/231548941492027393/4d0c2359141311b90b549398a593b11c.png"
+            ],
+            [
+                "221706949786468353",
+                "r/Xiaomi",
+                "https://cdn.discordapp.com/icons/221706949786468353/d843bd91942f8b37a3e80f63d7cacdcb.png"
+            ],
+            [
+                "189795554849456129",
+                "ErisBot",
+                "https://cdn.discordapp.com/icons/189795554849456129/f91a813e648ad6c3957289bb33345d9e.png"
+            ],
+            [
+                "189665083817852928",
+                "Volmit Community",
+                "https://cdn.discordapp.com/icons/189665083817852928/92d0c625338163357ce3800c9a421efe.png"
+            ],
+            [
+                "178391822186315777",
+                "Android Development",
+                "https://cdn.discordapp.com/icons/178391822186315777/ee6ef1991615551234b3f097ff7cc7b1.png"
+            ],
+            [
+                "159962941502783488",
+                "MEE6 Community",
+                "https://cdn.discordapp.com/icons/159962941502783488/bb1a183272ab3020ccbfebbe66866ddf.png"
+            ],
+            [
+                "114407194971209731",
+                "/r/Android",
+                "https://cdn.discordapp.com/icons/114407194971209731/6c0163c9ad863d26a762d7173c668d16.png"
+            ],
+            [
+                "98424317108293632",
+                "SKCraft",
+                "https://cdn.discordapp.com/icons/98424317108293632/9a8a3e2d8f30d61a1b6a9aad2111ad74.png"
+            ],
+            [
+                "332294233639878656",
+                "BlackSpigot Server",
+                "https://cdn.discordapp.com/icons/332294233639878656/63eddc65e7ac38a7f15261a6e7be8d07.png"
+            ],
+            [
+                "281502135177314305",
+                "•●AnubisCore●• (-) •●FFY00●•",
+                "null"
+            ]
+        ]
+    },
+    "settings": {
+        "refreshDelay": "62"
+    }
+}
