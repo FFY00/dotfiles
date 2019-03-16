@@ -1,9 +1,6 @@
-set encoding=utf-8 nobomb
+set encoding=utf-8 nobomb " Set encoding
 
-" Neovim Config
-let mapleader=","
-
-" Autoinstall
+" Plugin Autoinstall - Run PlugInstall if any plugin is missing
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent ! curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -12,47 +9,45 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'benekastah/neomake', {'on': ['Neomake'] }
-Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdtree'
-Plug 'mileszs/ack.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
-Plug 'jasoncodes/ctrlp-modified.vim'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'sheerun/vim-json'
-Plug 'othree/html5.vim'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'lilydjwg/colorizer', { 'for': ['css', 'sass', 'scss', 'less', 'html', 'xhtml', 'javascript', 'javascript.jsx'] }
-Plug 'martin-svk/vim-yaml'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'ervandew/supertab'
-Plug 'Yggdroot/indentline'
-Plug 'Raimondi/delimitMate'
-Plug 'ryanoasis/vim-devicons'
-Plug 'gregsexton/gitv', { 'on': 'Gitv' }
-Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
-Plug 'honza/dockerfile.vim'
-Plug 'majutsushi/tagbar'
-Plug 'garyburd/go-explorer'
-Plug 'fatih/vim-go'
+" Dependencies
+Plug 'rbgrouleff/bclose.vim'
+
+" Plugins
+Plug 'vim-airline/vim-airline'		" Airline - Status Bar
+Plug 'vim-airline/vim-airline-themes'	" Themes for Airline
+Plug 't1mxg0d/vim-lucario'		" Lucario colorscheme
+Plug 'itspriddle/vim-shellcheck'	" Shellcheck wrapper
+Plug 'dag/vim-fish'			" Fish shell function/script support
+Plug 'othree/html5.vim'			" HTML5 support
+Plug 'lilydjwg/colorizer'		" Add color to #556677 or rag(50, 100, 200) tags
+Plug 'cohama/lexima.vim'		" Autoclose parentheses, quotes, etc.
+Plug 'terryma/vim-multiple-cursors'	" Multiple cursors
+Plug 'martin-svk/vim-yaml'		" YAML support
+Plug 'tpope/vim-markdown'		" Markdown support
+Plug 'tpope/vim-git'			" Git support
+Plug 'airblade/vim-gitgutter'		" Shows git differences when editing the file
+Plug 'RRethy/vim-illuminate'		" Highlights other ocurrences of the word bellow the cursor:h
+Plug 'ryanoasis/vim-devicons'		" Adds icons
+Plug 'honza/dockerfile.vim'		" Docker support
+Plug 'bogado/file-line'			" Allows vim/nvim file.txt:20 where 20 is the line number
+Plug 'francoiscabrol/ranger.vim'	" Ranger integration
+Plug 'JesseKPhillips/d.vim'		" Dlang syntax
+Plug 'idanarye/vim-dutyl'		" Dlang tools integration
+Plug 'tbastos/vim-lua'			" Lua support
+Plug 'matze/vim-meson'			" Meson support
+
+" Reminder: Run PlugInstall after adding new plugins
 
 call plug#end()
 
 " Custom
-syntax enable
-set number
-colorscheme lucario
-set mouse-=a
+syntax enable		" Enable syntax
+set number		" Show line numbers
+colorscheme lucario	" Set colorscheme
+set mouse-=a		" Disable mouse integration
+set pastetoggle=<F2>	" Map F2 to toggle paste mode
 
+" Show tabs, whitespaces, etc.
 set list
 set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:·,nbsp:·
 set showbreak=↪
@@ -60,73 +55,54 @@ set showbreak=↪
 filetype plugin on
 filetype indent on
 
-set foldmethod=marker
-set foldlevel=2
-set fillchars="fold: "
+" Plugin configs
 
-set cmdheight=1
-set completeopt-=preview
-set suffixes=.bak,~,.swp,.swo,.o,.d,.info,.aux,.log,.dvi,.pdf,.bin,.bbl,.blg,.brf,.cb,.dmg,.exe,.ind,.idx,.ilg,.inx,.out,.toc,.pyc,.pyd,.dll
-set wildignore=*.o,*.obj,*~
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
-set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*
-set wildignore+=*DS_Store*
-set wildignore+=*.gem
-set wildignore+=tmp/**
-set wildmenu
-set wildmode=list:longest
-set completeopt=menu,menuone
-set confirm
-set linespace=3
-set laststatus=2
-
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeWinSize=50
-let g:NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeShowHidden=1
-let g:NERDTreeHighlightCursorline=0
-let g:NERDTreeRespectWildIgnore=1
-
-let g:gitgutter_map_keys=0
-let g:gitgutter_max_signs=9999
-let g:gitgutter_sign_added='+'
-let g:gitgutter_sign_modified='~'
-let g:gitgutter_sign_removed='-'
-let g:gitgutter_sign_modified_removed='~'
-let g:gitgutter_sign_removed_first_line='-'
-
+" Set syntastic symbols
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 
-let g:jsx_ext_required=0
+" Set ranger keys
+let g:ranger_map_keys = 0
+map <F3> :Ranger<CR>
+let g:ranger_replace_netrw = 1
 
-let g:neomake_verbose=0
-let g:neomake_warning_sign = {
-      \ 'text': '❯',
-      \ 'texthl': 'WarningMsg',
-      \ }
-let g:neomake_error_sign = {
-      \ 'text': '❯',
-      \ 'texthl': 'ErrorMsg',
-      \ }
+" Airline
 
-let g:vim_markdown_no_default_key_mappings=1
-let g:vim_markdown_folding_disabled=1
+let g:airline_theme='jellybeans'	" Set Airline theme
+set noshowmode				" Hide -- MODE --
 
-let g:python3_host_prog = '/usr/local/bin/python3'
-let g:python3_host_skip_check=1
+" Set symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
 
-let g:deoplete#enable_at_startup=1
+" unicode symbols
+"let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.readonly = '🔒'
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = '㏑'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'Ξ'
 
-let g:markdown_fenced_languages=[
-      \'bash=sh',
-      \'git=gitconfig',
-      \'javascript',
-      \'lua',
-      \'ruby',
-      \'tmux',
-      \'viml=vim',
-      \'xdefaults',
-      \'zsh']
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
