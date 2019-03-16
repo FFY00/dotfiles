@@ -27,3 +27,6 @@ Some personal customizations.
 
 #### Htop
 BlackNight color scheme is enabled by default. You may want to disable it acording to your ui.
+
+#### .Xmodmap
+Custom US International (accents and all) with the Numpad disabled. I don't use the Numpad so I removed the number functionality so I can do `Shift+KP_1` and `End` will still be pressed.
