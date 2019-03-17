@@ -72,9 +72,9 @@ do
             # Disk
             cmd "fdisk -l" && echo
             printf "%bSelect a disk to partition: %b" "$cyan" "$green" && read -r disk
-            [ -z "$disk" ] || echo
+            echo
             [ -z "$disk" ] || cmd "parted $disk"
-            [ -z "$disk" ] || echo
+            cmd "fdisk -l" && echo
             # Install Partition
             printf "%bInstall partition: %b" "$cyan" "$green" && read -r ipartition
             if ! (partprobe -d "$ipartition" &> /dev/null); then
@@ -96,7 +96,19 @@ do
             # Boot
             printf "%bBoot partition: (default=none) %b" "$cyan" "$green" && read -r bpartition
             echo
-            [ -z "$bpartition" ] || cmd "mkfs.fat -F32 $bpartition"
+            if [ ! -z "$bpartition" ]; then
+                if (ls /sys/firmware/efi/efivars &> /dev/null); then
+                    # EFI
+                    cmd "mkfs.fat -F32 $bpartition"
+                else
+                    # Legacy
+                    printf "%bBoot partition filesystem (mkfs.?): (default=ext4) %b" "$cyan" "$green" && read -r bfilesystem
+                    if [ -z "$bfilesystem" ]; then
+                        filesystem=ext4
+                    fi
+                    echo && cmd "mkfs.$filesystem $bpartition" && echo
+                fi
+            fi
 
             # Mount
             cmd "mount $ipartition /mnt"
