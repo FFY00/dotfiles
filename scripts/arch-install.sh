@@ -134,11 +134,13 @@ do
             cmd "arch-chroot /mnt hwclock --systohc"
 
             # Locale
-            echo -e "\n${lblue}Please enable your preferred locale."
-            printf "Press any key to edit /mnt/etc/locale.conf..." && read -r
+            echo -e "\n${lblue}Please enable your preferred locale in locale.gen and put it in locale.conf"
+            printf "Press any key to edit continue..." && read -r
             echo
-            cmd "vim /mnt/etc/locale.conf"
+            cmd "vim /mnt/etc/locale.gen"
             cmd "arch-chroot /mnt locale-gen"
+            cmd "echo 'LANG=en_US.UTF-8' > /mnt/etc/locale.conf"
+            cmd "vim /mnt/etc/locale.conf"
             echo
 
             # Hostname
@@ -153,7 +155,7 @@ do
             echo
 
             # Root account
-            printf "%bRoot password: (default=disabled)" "$cyan"
+            printf "%bRoot password:" "$cyan"
             echo && cmd "arch-chroot /mnt passwd" && echo
 
             printf "%b" "$yellow"
@@ -170,7 +172,7 @@ do
             echo && cmd "arch-chroot /mnt useradd -g users -G wheel -m $username" && echo
 
             # Password
-            echo -e "${cyan}Password: (default=disabled)"
+            echo -e "${cyan}Password:"
             echo && cmd "arch-chroot /mnt passwd $username" && echo
 
             # Sudo
@@ -185,6 +187,10 @@ do
         "Bootloader (GRUB)")
             if [ -z "$bpartition" ]; then
                 bpartition=$ipartition
+            fi
+
+            if [ -z "$bpartition" ]; then
+                printf "\n%bBoot partition: %b" "$cyan" "$green" && read -r bpartition
             fi
 
             if [ -z "$bpartition" ]; then
@@ -244,7 +250,7 @@ do
             printf "%bWhich other packages do you want to install? (default=none) %b" "$cyan" "$green" && read -r packages
             [ -z "$packages" ] || echo
             [ -z "$packages" ] || cmd "arch-chroot /mnt pacman -S $packages"
-            [ -z "$packages" ] || echo
+            echo
 
             printf "%b" "$yellow"
             ;;
