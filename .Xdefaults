@@ -9,10 +9,24 @@ URxvt*scrollTtyKeypress: true
 
 ! Support UTF8
 URxvt*termName: rxvt-unicode
-URxvt.letterSpace: 1
+!URxvt.lineSpace: -1
+!URxvt.letterSpace: -1
 
 ! Font
-URxvt.font: xft:camingocode:size=12, xft:Symbola, xft:Noto Emoji, font: xft:Inconsolata Nerd Font Mono
+!URxvt.font: xft:CamingoCode Nerd Font-12
+URxvt.font: xft:DroidSansMono Nerd Font-11, xft:Symbola, xft:Noto Emoji, xft:Inconsolata Nerd Font Mono
+
+! Disable scrollbar
+URxvt.scrollBar: false
+
+! Keep history
+URxvt.saveLines: 30000
+
+! Plugins
+URxvt.perl-ext-common: fullscreen
+
+! Keymaps
+URxvt.keysym.F11: perl:fullscreen:switch
 
 ! Color
 ! special
