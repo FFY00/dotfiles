@@ -19,7 +19,7 @@ Plug 't1mxg0d/vim-lucario'		" Lucario colorscheme
 Plug 'itspriddle/vim-shellcheck'	" Shellcheck wrapper
 Plug 'dag/vim-fish'			" Fish shell function/script support
 Plug 'othree/html5.vim'			" HTML5 support
-Plug 'lilydjwg/colorizer'		" Add color to #556677 or rag(50, 100, 200) tags
+Plug 'lilydjwg/colorizer'		" Add color to #556677 or rbg(50, 100, 200) tags
 Plug 'cohama/lexima.vim'		" Autoclose parentheses, quotes, etc.
 Plug 'terryma/vim-multiple-cursors'	" Multiple cursors
 Plug 'martin-svk/vim-yaml'		" YAML support
@@ -78,9 +78,9 @@ endif
 
 " unicode symbols
 "let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
+"let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
+"let g:airline_right_sep = '◀'
 let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.readonly = '🔒'
 let g:airline_symbols.linenr = '☰'
@@ -98,11 +98,15 @@ let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " powerline symbols
-let g:airline_left_sep = ''
+"let g:airline_left_sep = ''
+let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
+"let g:airline_right_sep = ''
+let g:airline_right_sep = ""
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 "let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
+
+let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
