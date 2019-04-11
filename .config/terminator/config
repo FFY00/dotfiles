@@ -1,22 +1,27 @@
 [global_config]
-focus = system
-#borderless = true
-inactive_color_offset = 1
-
+  focus = system
+  inactive_color_offset = 1.0
+  title_font = CamingoCode Nerd Font Mono 12
+  title_use_system_font = False
+  window_state = maximise
 [keybindings]
-full_screen = F11
-
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
 [profiles]
-[[default]]
-#font = CamingoCode Nerd Font 11
-font = DroidSansMono Nerd Font 11
-scrollback_lines = 30000
-cursor_blink = true
-show_titlebar = false
-scrollbar_position = disabled
-
-# Colors
-background_color = "#263238"
-cursor_color = "#a1b0b8"
-foreground_color = "#a1b0b8"
-palette = "#252525:#ff5252:#c3d82c:#ffc135:#42a5f5:#d81b60:#00acc1:#f5f5f5:#252525:#ff5252:#c3d82c:#ffc135:#42a5f5:#d81b60:#00acc1:#f5f5f5"
+  [[default]]
+    background_color = "#263238"
+    cursor_color = "#a1b0b8"
+    font = CamingoCode Nerd Font Mono 12
+    foreground_color = "#a1b0b8"
+    palette = "#252525:#ff5252:#c3d82c:#ffc135:#42a5f5:#d81b60:#00acc1:#f5f5f5:#252525:#ff5252:#c3d82c:#ffc135:#42a5f5:#d81b60:#00acc1:#f5f5f5"
+    scrollback_lines = 30000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

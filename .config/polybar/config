@@ -1,0 +1,280 @@
+; Top bar
+[bar/top]
+width = 100%
+height = 33
+
+;   Fonts
+; Default
+font-0 = "CamingoCode Nerd Font Mono:size=11.5"
+; Icons
+font-1 = "Material Icons:size=13;3"
+font-2 = "Tamsyn:pixelsize=12;0"
+font-3 = "Source Sans Pro:size=13"
+font-4 = "Noto Sans Symbols2:size=12;4"
+font-5 = "Icons:style=Regular:size=13;2"
+font-6 = "FontAwesome:style=Regular:size=15"
+font-7 = "CamingoCode Nerd Font Mono:size=8"
+font-8 = "CamingoCode Nerd Font Mono:size=27;5"
+font-9 = "CamingoCode Nerd Font Mono:size=20;4"
+font-10 = "Noto Sans Symbols2:size=12;2"
+font-11 = "Hack:size=12"
+
+; font-5 = font-icons
+
+; Colors
+background = ${xrdb:background:fallback value}
+foreground = ${xrdb:foreground:fallback value}
+
+; Padding
+line-size = 4
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+;separator = |
+
+; Modules
+modules-left = i3 cpu memory temperature network-traffic title
+modules-center = date
+modules-right = github network-status pulseaudio battery extra-battery powermenu
+
+; i3 module
+[module/i3]
+type = internal/i3
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+label-mode-padding = 0
+
+ws-icon-0 = 0;%{T10}%{T-}
+ws-icon-1 = 1;1
+ws-icon-2 = 2;2
+ws-icon-3 = 3;3
+ws-icon-4 = 4;4
+ws-icon-5 = 5;5
+ws-icon-6 = 6;6
+ws-icon-7 = 7;7
+ws-icon-8 = 8;%{T2}%{T-}
+ws-icon-9 = 9;%{T10}%{T-}
+ws-icon-10 = 10;%{T10}%{T-}
+
+label-focused = %icon%
+label-focused-background = #34434c
+label-focused-foreground = #c5ced3
+label-focused-underline = #718DC4
+label-focused-padding = 2
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+label-visible = %icon%
+label-visible-underline = #718DC4
+label-visible-padding = 2
+
+label-urgent = %icon%
+label-urgent-background = ${xrdb:color1:#000000}
+label-urgent-foreground = ${xrdb:color0:#000000}
+label-urgent-padding = 2
+
+label-mode-underline = #d81b60
+
+;label-separator = |
+
+; Date module
+[module/date]
+type = internal/date
+
+date = %d %b %Y
+time = %I:%M %p
+
+format =  <label>
+label = %date%, %time%
+
+; Battery module
+[section/battery-default]
+type = internal/battery
+
+adapter = AC
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = %{T9}%{T-}
+ramp-capacity-1 = %{T9}%{T-}
+ramp-capacity-2 = %{T9}%{T-}
+ramp-capacity-3 = %{T9}%{T-}
+ramp-capacity-4 = %{T9}%{T-}
+
+animation-charging-0 = %{T9}%{T-}
+animation-charging-1 = %{T9}%{T-}
+animation-charging-2 = %{T9}%{T-}
+animation-charging-3 = %{T9}%{T-}
+animation-charging-4 = %{T9}%{T-}
+animation-charging-framerate = 750
+
+animation-discharging-0 = %{T9}%{T-}
+animation-discharging-1 = %{T9}%{T-}
+animation-discharging-2 = %{T9}%{T-}
+animation-discharging-3 = %{T9}%{T-}
+animation-discharging-4 = %{T9}%{T-}
+animation-discharging-framerate = 500
+
+ramp-capacity-0-foreground = #ff4d4d
+
+; Main battery module
+[module/battery]
+inherit = section/battery-default
+
+battery = BAT0
+
+; Extra battery module
+[module/extra-battery]
+inherit = section/battery-default
+
+battery = BAT1
+
+; CPU module
+[module/cpu]
+type = internal/cpu
+
+interval = 0.5
+
+format = <label>
+;<ramp-coreload>
+label = CPU %percentage:2%%
+ramp-coreload-spacing = 1
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+format-underline = #718DC4
+
+; Memory module
+[module/memory]
+type = internal/memory
+
+format = <label>
+label = RAM %percentage_used%%
+
+format-underline = #718DC4
+
+; Temperature
+[module/temperature]
+type = internal/temperature
+
+warn-temperature = 80
+label = TEMP %temperature-c%
+label-warn = TEMP %temperature-c% 
+format-underline = #718DC4
+
+; Network traffic
+[module/network-traffic]
+type = custom/script
+
+exec = ~/.config/polybar/network-traffic.sh
+tail = true
+
+format-underline = #718DC4
+
+; Network status
+[module/network-status]
+type = custom/script
+
+exec = ~/.config/polybar/network-status.sh
+tail = true
+
+; Pulseaudio module
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume>
+label-muted = 🔇
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+format-underline = #718DC4
+
+; XWindow module
+[module/title]
+type = internal/xwindow
+
+;label = %title%
+label-maxlen = 18
+
+format-underline = #db8b70
+
+; Workspaces module
+[module/workspaces]
+type = internal/xworkspaces
+
+; Github module
+[module/github]
+type = internal/github
+
+token = ${file:~/.config/polybar/github-token.txt}
+empty-notifications = false
+format-prefix = %{T7} %{T-}
+label = %notifications%
+interval = 10
+
+format-underline = #718DC4
+
+; Powermnenu
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+;format-spacing = 1
+
+label-open = %{T10}%{T-}
+label-close = Cancel
+label-separator = " | "
+
+menu-0-0 = Hibernate
+menu-0-0-exec = menu-open-1
+menu-0-1 = Reboot
+menu-0-1-exec = menu-open-2
+menu-0-2 = Power Off
+menu-0-2-exec = menu-open-3
+menu-0-3 = Log Off
+menu-0-3-exec = menu-open-4
+
+menu-1-0 = Hibernate
+menu-1-0-exec = systemctl hibernate
+
+menu-2-0 = Reboot
+menu-2-0-exec = reboot
+
+menu-3-0 = Power Off
+menu-3-0-exec = poweroff
+
+menu-4-0 = Log Off
+menu-4-0-exec = pkill -KILL -u $USER
+
+menu-0-0-underline = #cc7a00
+menu-0-1-underline = #cc7a00
+menu-0-2-underline = #cc7a00
+menu-0-3-underline = #cc7a00
+menu-1-0-underline = #cc7a00
+menu-1-1-underline = #cc7a00
+menu-2-0-underline = #cc7a00
+menu-2-1-underline = #cc7a00
+menu-3-0-underline = #cc7a00
+menu-3-1-underline = #cc7a00
+menu-4-0-underline = #cc7a00
+menu-4-1-underline = #cc7a00
+label-close-underline = #cc7a00
+label-separator-underline = #cc7a00
+format-spacing-underline = #cc7a00
