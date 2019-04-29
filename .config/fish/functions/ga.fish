@@ -1,3 +1,4 @@
+# Defined in /tmp/fish.hIgUbC/ga.fish @ line 2
 function ga
-	git add (git ls-tree -r --name-only HEAD | fzf -m)
+	git ls-files -m -o --exclude-standard | fzf -m | xargs -r git add
 end
