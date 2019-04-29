@@ -35,17 +35,18 @@ Plug 'JesseKPhillips/d.vim'		" Dlang syntax
 Plug 'idanarye/vim-dutyl'		" Dlang tools integration
 Plug 'tbastos/vim-lua'			" Lua support
 Plug 'matze/vim-meson'			" Meson support
+Plug 'tpope/vim-surround'		" Bindings to change surroundings (quotes, brackets, etc.)
 
 " Reminder: Run PlugInstall after adding new plugins
 
 call plug#end()
 
 " Custom
-syntax enable		" Enable syntax
-set number		" Show line numbers
-colorscheme lucario	" Set colorscheme
-set mouse-=a		" Disable mouse integration
-set pastetoggle=<F2>	" Map F2 to toggle paste mode
+syntax enable			" Enable syntax
+set number relativenumber	" Show line numbers
+colorscheme lucario		" Set colorscheme
+set mouse-=a			" Disable mouse integration
+set pastetoggle=<F2>		" Map F2 to toggle paste mode
 
 " Show tabs, whitespaces, etc.
 set list
