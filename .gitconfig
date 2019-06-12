@@ -1,5 +1,8 @@
 [core]
 	editor = nvim
+	excludesfile = ~/.gitignore
+	commitGraph = true
+	hooksPath = ~/.git-hooks
 [color]
 	ui = true
 [gpg]
@@ -11,3 +14,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[user]
+	email = lains@archlinux.org
+	name = FFY00
+	signingkey = 46F633CBB0EB4BF2
+[log]
+	utf8 = true
+[init]
+	templatedir = ~/.git-templates
