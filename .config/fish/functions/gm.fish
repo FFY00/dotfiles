@@ -1,3 +1,8 @@
+# Defined in /tmp/fish.dkUCBe/gm.fish @ line 2
 function gm
-	command git commit -S -m $argv
+	set -l options
+	for i in (seq 1 (count $argv))
+		set -x options $options -m $argv[$i]
+	end
+	command git commit -S $options
 end
