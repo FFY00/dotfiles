@@ -144,7 +144,7 @@ do
             echo
 
             # Hostname
-            printf "%bHostname: (default=archlinux)%b" "$cyan" "$green" && read -r hostname
+            printf "%bHostname: (default=archlinux) %b" "$cyan" "$green" && read -r hostname
             if [ -z "$hostname" ]; then
                 hostname=archlinux
             fi
@@ -179,7 +179,7 @@ do
             echo -e "${lblue}You might want to enable sudo permissions for the wheel group."
             printf "Press any key to edit /mnt/etc/sudoers..." && read -r
             echo
-            cmd "vim /mnt/etc/sudoers"
+            cmd "sudo vim /mnt/etc/sudoers"
             echo
 
             printf "%b" "$yellow"
