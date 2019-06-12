@@ -20,7 +20,7 @@ Plug 'itspriddle/vim-shellcheck'	" Shellcheck wrapper
 Plug 'dag/vim-fish'			" Fish shell function/script support
 Plug 'othree/html5.vim'			" HTML5 support
 Plug 'lilydjwg/colorizer'		" Add color to #556677 or rbg(50, 100, 200) tags
-Plug 'cohama/lexima.vim'		" Autoclose parentheses, quotes, etc.
+Plug 'Raimondi/delimitMate'		" Autoclose parentheses, quotes, etc.
 Plug 'terryma/vim-multiple-cursors'	" Multiple cursors
 Plug 'martin-svk/vim-yaml'		" YAML support
 Plug 'tpope/vim-markdown'		" Markdown support
@@ -35,7 +35,8 @@ Plug 'JesseKPhillips/d.vim'		" Dlang syntax
 Plug 'idanarye/vim-dutyl'		" Dlang tools integration
 Plug 'tbastos/vim-lua'			" Lua support
 Plug 'matze/vim-meson'			" Meson support
-Plug 'tpope/vim-surround'		" Bindings to change surroundings (quotes, brackets, etc.)
+Plug 'Houl/repmo-vim'			" Allow to repeat motions
+Plug 'tpope/vim-sleuth'			" Automatically adapt to current indentation
 
 " Reminder: Run PlugInstall after adding new plugins
 
@@ -47,6 +48,13 @@ set number relativenumber	" Show line numbers
 colorscheme lucario		" Set colorscheme
 set mouse-=a			" Disable mouse integration
 set pastetoggle=<F2>		" Map F2 to toggle paste mode
+
+" Indentation
+set ts=8 sw=4
+
+" Disable background color to make honor transparency
+"highlight Normal ctermbg=none
+"highlight NonText ctermbg=none
 
 " Show tabs, whitespaces, etc.
 set list
@@ -111,3 +119,23 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
+
+" repmo.vim
+" motion and its reverse motion:
+:noremap <expr> h repmo#SelfKey('h', 'l')|sunmap h
+:noremap <expr> l repmo#SelfKey('l', 'h')|sunmap l
+
+" if you like `:noremap j gj', you can keep that:
+:map <expr> j repmo#Key('gj', 'gk')|sunmap j
+:map <expr> k repmo#Key('gk', 'gj')|sunmap k
+
+" repeat the last [count]motion or the last zap-key:
+:map <expr> ; repmo#LastKey(';')|sunmap ;
+:map <expr> , repmo#LastRevKey(',')|sunmap ,
+
+" add these mappings when repeating with `;' or `,':
+:noremap <expr> f repmo#ZapKey('f')|sunmap f
+:noremap <expr> F repmo#ZapKey('F')|sunmap F
+:noremap <expr> t repmo#ZapKey('t')|sunmap t
+:noremap <expr> T repmo#ZapKey('T')|sunmap T
+
