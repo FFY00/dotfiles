@@ -24,7 +24,7 @@ while true; do
         elif [[ $interface == w* ]]; then
             [ $(cat /sys/class/net/"$interface"/carrier) == "1" ] && symbol='%{T9}%{T-}' || symbol=''
         else
-            continue
+            continue # Not interested (ex: docker, virtual adapters, etc.)
         fi
 
         bar+=("$color$symbol%{F-}")
