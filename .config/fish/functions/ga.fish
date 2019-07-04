@@ -1,4 +1,4 @@
-# Defined in /tmp/fish.hIgUbC/ga.fish @ line 2
+# Defined in /tmp/fish.hr7tHJ/ga.fish @ line 2
 function ga
-	git ls-files -m -o --exclude-standard | fzf -m | xargs -r git add
+	git ls-files -m -o --exclude-standard (git rev-parse --show-toplevel) | fzf -m | xargs -r git add
 end
