@@ -2,9 +2,11 @@ function rmpkg
 	set -x folder (basename (pwd))
 	if test $folder = 'trunk'
 		set -x folder (echo $folder | sed "s|/$folder||g" | xargs basename)
-	else
+	else if test -d trunk
 		echo "Changing directory..."
 		cd 'trunk'
+	else
+		return
 	end
 	if test -e 'PKGBUILD'
 		set -lx files *.log *.pkg.* src pkg .SRCINFO
