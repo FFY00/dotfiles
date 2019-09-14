@@ -37,6 +37,7 @@ Plug 'tbastos/vim-lua'			" Lua support
 Plug 'matze/vim-meson'			" Meson support
 Plug 'Houl/repmo-vim'			" Allow to repeat motions
 Plug 'tpope/vim-sleuth'			" Automatically adapt to current indentation
+Plug 'gu-fan/riv.vim'			" rst support
 
 " Reminder: Run PlugInstall after adding new plugins
 
@@ -53,8 +54,8 @@ set pastetoggle=<F2>		" Map F2 to toggle paste mode
 set ts=8 sw=4
 
 " Disable background color to make honor transparency
-"highlight Normal ctermbg=none
-"highlight NonText ctermbg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 " Show tabs, whitespaces, etc.
 set list
