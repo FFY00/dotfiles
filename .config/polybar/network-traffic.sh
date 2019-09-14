@@ -33,7 +33,7 @@ update_interfaces() {
     found=($(find /sys/class/net -maxdepth 1 -type l -not -name 'docker*' -not -name 'br*' -not -name 'v*' -printf '%f\n'))
     INTERFACES=()
     for int in "${found[@]}"; do
-        [ $(cat /sys/class/net/"$int"/carrier) == "1" ] && [ "$int" != 'lo' ] && INTERFACES+=("$int")
+        [ $(cat /sys/class/net/"$int"/operstate) = "up" ] && [ "$int" != 'lo' ] && INTERFACES+=("$int")
     done
 }
 

@@ -43,6 +43,9 @@ bindsym $mod+Shift+d exec rofi -show drun -show-icons -theme material-center
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# launch clipboard manager
+bindsym $mod+c exec env CM_LAUNCHER=rofi clipmenu -theme material-center-single-column
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -97,6 +100,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# travel through workspaces
+bindsym $mod+Control+Left workspace prev
+bindsym $mod+Control+Right workspace next
+
 # last workspace
 bindsym $mod+Tab workspace back_and_forth
 
@@ -127,6 +134,8 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+m workspace $ws9
 bindsym $mod+0 workspace $ws10
+# Synergy
+bindsym $mod+backslash workspace $ws0
 
 # move focused container to workspace
 bindsym $mod+Shift+grave move container to workspace $ws0
@@ -140,6 +149,18 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+# Synergy
+#bindsym $mod+pipe move container to workspace $ws0
+#bindsym $mod+exclam move container to workspace $ws1
+#bindsym $mod+quotedbl move container to workspace $ws2
+#bindsym $mod+numbersign move container to workspace $ws3
+#bindsym $mod+dollar move container to workspace $ws4
+#bindsym $mod+percent move container to workspace $ws5
+#bindsym $mod+ampersand move container to workspace $ws6
+#bindsym $mod+slash move container to workspace $ws7
+#bindsym $mod+parenleft move container to workspace $ws8
+#bindsym $mod+parenright move container to workspace $ws9
+#bindsym $mod+equal move container to workspace $ws10
 
 # Default applications workspaces
 for_window [class="Gimp"] move to workspace $ws7
@@ -151,7 +172,8 @@ for_window [class="Blockify"] move to workspace $ws10
 
 # Default applications keybinds
 bindsym $mod+Control+f exec firefox
-bindsym $mod+Control+0 exec ~/.config/i3/spotify.sh
+#bindsym $mod+Control+0 exec ~/.config/i3/spotify.sh
+bindsym $mod+Control+0 exec spotify-adkiller
 bindsym $mod+Control+o exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 bindsym $mod+Control+n exec nm-connection-editor
 bindsym $mod+Control+m exec evolution -c mail
@@ -160,9 +182,9 @@ bindsym $mod+Control+k exec i3-layout-manager
 bindsym $mod+Control+c exec --no-startup-id compton --config ~/.config/compton/compton.conf
 
 # scrot & gimp - root
-bindsym Print exec scrot -e 'mv $f ~/Pictures/Screenshots/ && gimp ~/Pictures/Screenshots/$f'
+bindsym $mod+Shift+Print exec scrot -e 'mv $f ~/Pictures/Screenshots/ && gimp ~/Pictures/Screenshots/$f'
 # scrot & gimp - select window or rectangle
-bindsym Mod1+Print exec scrot -s -e 'mv $f ~/Pictures/Screenshots/ && gimp ~/Pictures/Screenshots/$f'
+bindsym $mod+Control+Print exec scrot -s -e 'mv $f ~/Pictures/Screenshots/ && gimp ~/Pictures/Screenshots/$f'
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -244,3 +266,5 @@ exec --no-startup-id firefox								# Autostart firefox in workspace 1
 exec --no-startup-id evolution								# Start evolution in the background
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1		# Start polkit agent
 exec --no-startup-id dunst								# Start the notification manager
+#exec --no-startup-id synergyc --no-tray --name saetre 192.168.1.66:24800		# Start synergy daemon
+exec --no-startup-id clipmenud								# Start clipboard daemon
