@@ -1,4 +1,4 @@
-function grf
+function grf --wraps 'git reset --hard'
 	read -l -n 1 -P 'Do you want to do a hard git reset? (y/n) ' confirm
 	if test "$confirm" != 'y' -a "$confirm" != 'Y'
 		echo 'Reset aborted.'
