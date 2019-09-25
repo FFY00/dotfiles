@@ -109,7 +109,7 @@ bindsym $mod+Tab workspace back_and_forth
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places
-set $ws0 "0"
+set $ws_firefox "0"
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -120,9 +120,16 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws_extra1 "13"
+set $ws_extra2 "14"
+set $ws_irc "15"
+set $ws_mail "16"
+set $ws_spotify "17"
 
 # switch to workspace
-bindsym $mod+grave workspace $ws0
+bindsym $mod+grave workspace $ws_firefox
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -132,13 +139,21 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+m workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $mod+minus workspace $ws11
+bindsym $mod+equal workspace $ws12
+bindsym $mod+bracketleft workspace $ws_extra1
+bindsym $mod+bracketright workspace $ws_extra2
+bindsym $mod+m workspace $ws_mail
+bindsym $mod+q workspace $ws_irc
+bindsym $mod+p workspace $ws_spotify
+
+
 # Synergy
 bindsym $mod+backslash workspace $ws0
 
 # move focused container to workspace
-bindsym $mod+Shift+grave move container to workspace $ws0
+bindsym $mod+Shift+grave move container to workspace $ws_firefox
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -149,6 +164,13 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+minus move container to workspace $ws11
+bindsym $mod+Shift+equal move container to workspace $ws12
+bindsym $mod+Shift+bracketleft move container to workspace $ws_extra1
+bindsym $mod+Shift+bracketright move container to workspace $ws_extra2
+bindsym $mod+Shift+m move container to workspace $ws_mail
+bindsym $mod+Shift+a move container to workspace $ws_irc
+bindsym $mod+Shift+p move container to workspace $ws_spotify
 # Synergy
 #bindsym $mod+pipe move container to workspace $ws0
 #bindsym $mod+exclam move container to workspace $ws1
@@ -163,12 +185,14 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 #bindsym $mod+equal move container to workspace $ws10
 
 # Default applications workspaces
-for_window [class="Gimp"] move to workspace $ws7
-for_window [class="discord"] move to workspace $ws8
-for_window [class="Riot"] move to workspace $ws8
-for_window [class="Evolution"] move to workspace $ws9
-for_window [class="Spotify"] move to workspace $ws10
-for_window [class="Blockify"] move to workspace $ws10
+for_window [class="Firefox"] move to workspace $ws_firefox
+for_window [class="Gimp"] move to workspace $ws_extra1
+for_window [class="discord"] move to workspace $ws_extra2
+for_window [class="Riot"] move to workspace $ws_extra2
+for_window [class="Hexchat"] move to workspace $ws_irc
+for_window [class="Evolution"] move to workspace $ws_mail
+for_window [class="Spotify"] move to workspace $ws_spotify
+for_window [class="Blockify"] move to workspace $ws_spotify
 
 # Default applications keybinds
 bindsym $mod+Control+f exec firefox
@@ -262,7 +286,8 @@ exec_always --no-startup-id nm-applet							# NetworkManager
 exec --no-startup-id xmodmap ~/.Xmodmap							# Set modmap
 exec --no-startup-id xss-lock -- betterlockscreen -l					# Subscribe i3lock to suspend
 exec --no-startup-id ~/.config/htop/change-theme.sh 0					# Update htop theme (to make it look better with transparency)
-exec --no-startup-id firefox								# Autostart firefox in workspace 1
+exec --no-startup-id firefox								# Autostart firefox
+exec --no-startup-id hexchat								# Autostart hexchat
 exec --no-startup-id evolution								# Start evolution in the background
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1		# Start polkit agent
 exec --no-startup-id dunst								# Start the notification manager
