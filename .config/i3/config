@@ -148,10 +148,6 @@ bindsym $mod+m workspace $ws_mail
 bindsym $mod+q workspace $ws_irc
 bindsym $mod+p workspace $ws_spotify
 
-
-# Synergy
-bindsym $mod+backslash workspace $ws0
-
 # move focused container to workspace
 bindsym $mod+Shift+grave move container to workspace $ws_firefox
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -171,23 +167,10 @@ bindsym $mod+Shift+bracketright move container to workspace $ws_extra2
 bindsym $mod+Shift+m move container to workspace $ws_mail
 bindsym $mod+Shift+a move container to workspace $ws_irc
 bindsym $mod+Shift+p move container to workspace $ws_spotify
-# Synergy
-#bindsym $mod+pipe move container to workspace $ws0
-#bindsym $mod+exclam move container to workspace $ws1
-#bindsym $mod+quotedbl move container to workspace $ws2
-#bindsym $mod+numbersign move container to workspace $ws3
-#bindsym $mod+dollar move container to workspace $ws4
-#bindsym $mod+percent move container to workspace $ws5
-#bindsym $mod+ampersand move container to workspace $ws6
-#bindsym $mod+slash move container to workspace $ws7
-#bindsym $mod+parenleft move container to workspace $ws8
-#bindsym $mod+parenright move container to workspace $ws9
-#bindsym $mod+equal move container to workspace $ws10
 
 # Default applications workspaces
 for_window [class="Firefox"] move to workspace $ws_firefox
-for_window [class="Gimp"] move to workspace $ws_extra1
-for_window [class="discord"] move to workspace $ws_extra2
+for_window [class="discord"] move to workspace $ws_extra1
 for_window [class="Riot"] move to workspace $ws_extra2
 for_window [class="Hexchat"] move to workspace $ws_irc
 for_window [class="Evolution"] move to workspace $ws_mail
@@ -197,7 +180,7 @@ for_window [class="Blockify"] move to workspace $ws_spotify
 # Default applications keybinds
 bindsym $mod+Control+f exec firefox
 #bindsym $mod+Control+0 exec ~/.config/i3/spotify.sh
-bindsym $mod+Control+0 exec spotify-adkiller
+bindsym $mod+Control+p exec spotify
 bindsym $mod+Control+o exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 bindsym $mod+Control+n exec nm-connection-editor
 bindsym $mod+Control+m exec evolution -c mail
@@ -206,9 +189,9 @@ bindsym $mod+Control+k exec i3-layout-manager
 bindsym $mod+Control+c exec --no-startup-id compton --config ~/.config/compton/compton.conf
 
 # scrot & gimp - root
-bindsym $mod+Shift+Print exec scrot -e 'mv $f ~/Pictures/Screenshots/ && gimp ~/Pictures/Screenshots/$f'
+#bindsym $mod+Print exec scrot -e 'mv $f ~/Pictures/Screenshots/ && gimp ~/Pictures/Screenshots/$f'
 # scrot & gimp - select window or rectangle
-bindsym $mod+Control+Print exec scrot -s -e 'mv $f ~/Pictures/Screenshots/ && gimp ~/Pictures/Screenshots/$f'
+#bindsym $mod+Control+Print exec scrot -s -e 'mv $f ~/Pictures/Screenshots/ && gimp ~/Pictures/Screenshots/$f'
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -253,8 +236,8 @@ mode "resize" {
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 3 px or 3 ppt
-        bindsym Down resize grow height 3 px or 3 ppt
-        bindsym Up resize shrink height 3 px or 3 ppt
+        bindsym Up resize grow height 3 px or 3 ppt
+        bindsym Down resize shrink height 3 px or 3 ppt
         bindsym Right resize grow width 3 px or 3 ppt
 
         # back to normal: Enter or Escape or $mod+r
@@ -278,18 +261,26 @@ for_window [class="^.*"] border pixel 2
 # Fix borders in stack mode
 hide_edge_borders smart
 
+# Gaps
+gaps inner 0
+gaps outer 0
+bindsym $mod+semicolon  gaps inner current minus 5
+bindsym $mod+apostrophe gaps inner current plus 5
+
 # Startup
+exec_always --no-startup-id ~/.config/polybar/launch.sh					# Polybar
+exec --no-startup-id nm-applet			        				# NetworkManager
 exec --no-startup-id nitrogen --set-zoom-fill ~/Pictures/Wallpapers/opo0834a.tif	# Wallpaper
 exec --no-startup-id compton --config ~/.config/compton/compton.conf			# Transparency compositor
-exec_always --no-startup-id ~/.config/polybar/launch.sh					# Polybar
-exec_always --no-startup-id nm-applet							# NetworkManager
-exec --no-startup-id xmodmap ~/.Xmodmap							# Set modmap
+exec --no-startup-id setxkbmap -variant altgr-intl					# Set international-altgr keyboard variant
 exec --no-startup-id xss-lock -- betterlockscreen -l					# Subscribe i3lock to suspend
-exec --no-startup-id ~/.config/htop/change-theme.sh 0					# Update htop theme (to make it look better with transparency)
-exec --no-startup-id firefox								# Autostart firefox
-exec --no-startup-id hexchat								# Autostart hexchat
-exec --no-startup-id evolution								# Start evolution in the background
+exec --no-startup-id evolution								# Start evolution daemon in the background
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1		# Start polkit agent
 exec --no-startup-id dunst								# Start the notification manager
-#exec --no-startup-id synergyc --no-tray --name saetre 192.168.1.66:24800		# Start synergy daemon
 exec --no-startup-id clipmenud								# Start clipboard daemon
+
+# Autostart apps
+exec --no-startup-id firefox								# Autostart firefox
+exec --no-startup-id evolution -c mail							# Start the email client
+#exec --no-startup-id hexchat								# Autostart hexchat
+#exec --no-startup-id synergyc --no-tray --name saetre 192.168.1.66:24800		# Start synergy daemon
