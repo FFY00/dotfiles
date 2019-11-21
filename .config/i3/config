@@ -273,6 +273,7 @@ exec --no-startup-id nm-applet			        				# NetworkManager
 exec --no-startup-id nitrogen --set-zoom-fill ~/Pictures/Wallpapers/opo0834a.tif	# Wallpaper
 exec --no-startup-id compton --config ~/.config/compton/compton.conf			# Transparency compositor
 exec --no-startup-id setxkbmap -variant altgr-intl					# Set international-altgr keyboard variant
+exec --no-startup-id xmodmap ~/.Xmodmap         					# Set custom keyboard layout
 exec --no-startup-id xss-lock -- betterlockscreen -l					# Subscribe i3lock to suspend
 exec --no-startup-id evolution								# Start evolution daemon in the background
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1		# Start polkit agent
