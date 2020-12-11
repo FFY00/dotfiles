@@ -15,3 +15,4 @@ gpg --keyserver hkp://keyserver.oeg.com.au --send-key $@ &
 gpg --keyserver hkp://keyserver.stack.nl --send-key $@ &
 gpg --keyserver hkp://pgp.zdv.uni-mainz.de --send-key $@ &
 gpg --keyserver hkp://keyserver.cais.rnp.br --send-key $@ &
+gpg --keyserver hkp://keys2.kfwebs.net --send-key $@ &
