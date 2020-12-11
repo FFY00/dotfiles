@@ -1,8 +1,10 @@
+# Defined in /tmp/fish.GFYicj/new-pkg-dir.fish @ line 2
 function new-pkg-dir
 	if test (count $argv) -eq 0
 		echo "Missing package name..."
 		return
 	end
+	cd ~/git/arch/community
 	if test -d $argv[1]
 		echo "Directory already exists..."
 		return
