@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-PROTECTED_BRANCHES="^(master|release-*)"
+PROTECTED_BRANCHES="^(main|master|release-*)"
 
 if [[ "$BRANCH" =~ $PROTECTED_BRANCHES ]]; then
   read -p "Are you sure you want to push to '$BRANCH' ? (y/n): " -n 1 -r < /dev/tty
