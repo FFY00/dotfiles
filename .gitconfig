@@ -15,8 +15,8 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	email = lains@archlinux.org
-	name = FFY00
+	email = lains@riseup.net
+	name = Filipe Laíns
 	signingkey = 46F633CBB0EB4BF2
 [log]
 	utf8 = true
