@@ -1,0 +1,29 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Material Theme Darker",
+    "workbench.sideBar.location": "left",
+
+    "materialTheme.accent": "Teal",
+
+    "window.titleBarStyle": "custom",
+
+    "editor.fontFamily": "Source Code, Menlo, Monaco, Courier New, Monospace",
+    "editor.detectIndentation": true,
+    "editor.lineHeight": 20,
+    "editor.rulers": [80, 127],
+    "editor.renderWhitespace": "all",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.tabSize": 8,
+    "editor.insertSpaces": false,
+
+    "files.autoSave": "afterDelay",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+
+    "git.defaultCloneDirectory": "~/git/",
+
+    "amVim.bindCtrlCommands": false,
+    "amVim.mimicVimSearchBehavior": false,
+    "amVim.useSystemClipboard": true,
+    "amVim.startInInsertMode": true
+}
