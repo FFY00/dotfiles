@@ -1,0 +1,100 @@
+[global]
+    # Display
+    follow = mouse
+
+    # Geometry
+    width = 450  # TODO: try dynamic now that dunst has native progress bar support
+    height = 10  # TODO: reconsider
+    origin = top-right
+    offset = 30x60
+    scale = 0
+
+    notification_limit = 20
+
+    # Progress bar
+    progress_bar = true
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+    icon_corner_radius = 0
+
+    indicate_hidden = yes
+
+    # Graphics
+    transparency = 10
+    separator_height = 0
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 0
+    frame_width = 0
+    frame_color = "#FFFFFF"
+    gap_size = 0
+    separator_color = frame
+
+    sort = yes
+    idle_threshold = 120
+
+    # Text
+    font = CamingoCode Nerd Font Mono 10
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = -1
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    # Icons
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 128
+
+    # History
+    sticky_history = yes
+    history_length = 0
+
+    # Misc/Advanced
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    ignore_dbusclose = false
+
+    # Wayland
+    layer = overlay
+    force_xwayland = false
+
+    # Legacy
+    force_xinerama = false
+
+    # Mouse
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = true
+
+[urgency_low]
+    background = "#3C4F59"
+    foreground = "#C4D6E0"
+    timeout = 3
+
+[urgency_normal]
+    background = "#7094DB"
+    foreground = "#000000"
+    timeout = 6
+
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 0

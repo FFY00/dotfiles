@@ -1,0 +1,17 @@
+encryption = 'gpg'
+progress = true
+
+[edit]
+command = 'nvim'
+apply = true
+
+[diff]
+pager = 'diff-so-fancy'
+
+[gpg]
+args = ['--quiet']
+recepient = '77F98EA00DABE87A!'
+
+[secret]
+command = '{{ .chezmoi.sourceDir }}/vault.py'
+args = ['~/.config/chezmoi/secrets.toml']
