@@ -25,5 +25,10 @@
     "amVim.bindCtrlCommands": false,
     "amVim.mimicVimSearchBehavior": false,
     "amVim.useSystemClipboard": true,
-    "amVim.startInInsertMode": true
+    "amVim.startInInsertMode": true,
+
+    "python.defaultInterpreterPath": "/usr/bin/python",
+    "python.linting.mypyEnabled": true,
+
+    "ruff.importStrategy": "useBundled"
 }
