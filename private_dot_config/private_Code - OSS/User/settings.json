@@ -20,6 +20,8 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
 
+    "security.workspace.trust.untrustedFiles": "open",
+
     "git.defaultCloneDirectory": "~/git/",
 
     "amVim.bindCtrlCommands": false,
