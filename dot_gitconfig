@@ -26,6 +26,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
 [user]
 	email = lains@riseup.net
 	name = Filipe Laíns
