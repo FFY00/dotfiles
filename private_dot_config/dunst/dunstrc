@@ -3,8 +3,7 @@
     follow = mouse
 
     # Geometry
-    width = 450  # TODO: try dynamic now that dunst has native progress bar support
-    height = 10  # TODO: reconsider
+    width = (0, 450)
     origin = top-right
     offset = 30x60
     scale = 0
