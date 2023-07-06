@@ -1,4 +1,7 @@
+# Se fish settings
+set -g fish_greeting
 
+# Set PATH
 set -ax PATH ~/.local/bin
 set -ax PATH ~/.cargo/bin
 set -ax PATH ~/.cabal/bin
