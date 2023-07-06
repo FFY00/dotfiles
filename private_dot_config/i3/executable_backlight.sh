@@ -13,14 +13,15 @@ function get_brightness {
 }
 
 function send_notification {
-  icon="preferences-system-brightness-lock"
+  icon='preferences-system-brightness-lock'
   brightness=$(get_brightness)
-  # Make the bar with the special character ─ (it's not dash -)
-  # https://en.wikipedia.org/wiki/Box-drawing_character
-  bar=$(printf '█%.0s' $(eval echo "{1..$((brightness / 5))}"))
-  value=$(printf '%3d%%' "$brightness")
-  # Send the notification
-  dunstify -i "$icon" -r 5555 -u normal "Brightness $value $bar"
+  dunstify \
+    -h string:synchronous:backlight \
+    -h int:value:$brightness \
+    -i "$icon" \
+    -r 5555 \
+    -u normal \
+    'Brightness'
 }
 
 case $1 in

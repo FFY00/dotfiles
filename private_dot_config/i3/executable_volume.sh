@@ -292,18 +292,14 @@ notify_muted() {
 notify_volume() {
     local vol=$(get_volume)
     local icon=$(get_volume_icon "$vol")
-    local text=$(printf "Volume     %3d%%" "$vol")
-
-    if $opt_show_volume_progress; then
-        local progress=$(get_progress_bar "$vol")
-        text="$text $progress"
-    fi
-
-    if $opt_use_dunstify; then
-        dunstify -i "$icon" -t $expires -h int:value:"$vol" -h string:synchronous:volume "$text" -r 1000
-    else
-        notify-send -i "$icon" -t $expires -h int:value:"$vol" -h string:synchronous:volume "$text"
-    fi
+    dunstify \
+        -h string:synchronous:volume \
+        -h int:value:$vol \
+        -i "$icon-symbolic" \
+        -t "$expires" \
+        -r 1000 \
+        -u normal \
+        'Volume'
 }
 
 # Updates the status line.
