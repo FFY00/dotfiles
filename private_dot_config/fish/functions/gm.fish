@@ -4,5 +4,5 @@ function gm
 	for i in (seq 1 (count $argv))
 		set -x options $options -m $argv[$i]
 	end
-	command git commit -S $options
+	command git commit $options
 end
