@@ -27,9 +27,9 @@
     horizontal_padding = 8
     text_icon_padding = 0
     frame_width = 0
-    frame_color = "#FFFFFF"
-    gap_size = 0
-    separator_color = frame
+    frame_color = "#000000"
+    gap_size = 1
+    separator_color = "#FFFFFF"
 
     sort = yes
     idle_threshold = 120
