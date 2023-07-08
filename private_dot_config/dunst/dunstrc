@@ -3,7 +3,7 @@
     follow = mouse
 
     # Geometry
-    width = (0, 450)
+    width = (160, 450)
     origin = top-right
     offset = 30x60
     scale = 0
@@ -13,7 +13,6 @@
     # Progress bar
     progress_bar = true
     progress_bar_frame_width = 1
-    progress_bar_min_width = 150
     progress_bar_max_width = 300
     progress_bar_corner_radius = 0
     icon_corner_radius = 0

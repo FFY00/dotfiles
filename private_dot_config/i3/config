@@ -211,9 +211,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/volume.sh -npy -i 5 -l 100 # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/volume.sh -npy -d 5 # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/volume.sh -amn # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/volume.sh -i 5
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/volume.sh -d 5
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/volume.sh -t
+bindsym XF86AudioMicMute exec --no-startup-id ~/.config/i3/volume.sh -k in -t
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/backlight.sh up # increase screen brightness
