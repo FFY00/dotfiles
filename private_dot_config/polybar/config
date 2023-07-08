@@ -42,7 +42,7 @@ module-margin-right = 1
 modules-left = i3 cpu memory temperature network-traffic
 ;title
 modules-center = date
-modules-right = github network-status pulseaudio battery extra-battery powermenu
+modules-right = network-status pulseaudio battery extra-battery powermenu
 
 ; i3 module
 [module/i3]
