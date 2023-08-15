@@ -20,8 +20,6 @@ set -ax SPHINXOPTS -j32
 set -ax FZF_DEFAULT_OPTS --color=bg+:-1
 
 # Set default configs
-#set -x CCACHE_PREFIX 'distcc'
-#set -x DISTCC_HOSTS 'horus'
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
 set -x GPG_TTY tty
 
