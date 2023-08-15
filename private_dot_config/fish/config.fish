@@ -10,7 +10,7 @@ set -ax PATH ~/.dotnet/tools
 # Set default programs
 ## Compilers
 set -x CC /usr/lib/ccache/bin/cc
-set -x CXX /usr/lib/ccache/bin/cxx
+set -x CXX /usr/lib/ccache/bin/c++
 ## General
 set -x EDITOR nvim
 
