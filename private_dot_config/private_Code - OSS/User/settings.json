@@ -20,6 +20,8 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
 
+    "explorer.confirmDragAndDrop": false,
+
     "security.workspace.trust.untrustedFiles": "open",
 
     "git.defaultCloneDirectory": "~/git/",
