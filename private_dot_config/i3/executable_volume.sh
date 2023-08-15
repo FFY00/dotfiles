@@ -86,7 +86,6 @@ notify() {
         fi
     fi
 
-    echo dunstify ${args[@]} "$msg"
     dunstify ${args[@]} "$msg"
 }
 
