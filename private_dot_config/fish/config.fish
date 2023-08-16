@@ -13,6 +13,7 @@ set -x CC /usr/lib/ccache/bin/cc
 set -x CXX /usr/lib/ccache/bin/c++
 ## General
 set -x EDITOR nvim
+set -x VISUAL nvim
 
 # Set default arguments
 set -ax MAKEFLAGS -j32
