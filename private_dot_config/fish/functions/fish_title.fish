@@ -1,3 +1,9 @@
 function fish_title
-	echo (status current-command)
+	switch (status current-command)
+		case fish
+			echo fish @ (prompt_pwd)
+
+		case '*'
+			echo (status current-commandline)
+	end
 end
