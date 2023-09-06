@@ -18,7 +18,7 @@ set -x VISUAL nvim
 # Set default arguments
 set -ax MAKEFLAGS -j32
 set -ax SPHINXOPTS -j32
-set -ax FZF_DEFAULT_OPTS --color=bg+:-1
+set -ax FZF_DEFAULT_OPTS --color=bg+:-1  # clear the background color, looks better with the transparency
 
 # Set default configs
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
