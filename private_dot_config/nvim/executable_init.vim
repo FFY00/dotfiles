@@ -76,8 +76,9 @@ colorscheme lucario		" Set colorscheme
 set mouse=			" Disable mouse integration
 set pastetoggle=<F2>		" Map F2 to toggle paste mode
 
-" Indentation
-set ts=8 sw=4
+" Enable file type detection and type-based indent settings
+filetype on
+filetype indent on
 
 " Disable background color to make honor transparency
 highlight Normal ctermbg=none
@@ -87,9 +88,6 @@ highlight NonText ctermbg=none
 set list
 set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:·,nbsp:·
 set showbreak=↪
-
-filetype plugin on
-filetype indent on
 
 "
 " Plugin configs
