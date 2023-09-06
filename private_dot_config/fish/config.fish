@@ -1,4 +1,4 @@
-# Se fish settings
+# Set fish settings
 set -g fish_greeting
 
 # Set PATH
