@@ -65,6 +65,10 @@ call plug#end()
 " Native config
 "
 
+" Alias
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command Wq :execute ':silent w !sudo tee % > /dev/null' | :q!
+
 " Custom
 syntax enable			" Enable syntax
 set number relativenumber	" Show line numbers
