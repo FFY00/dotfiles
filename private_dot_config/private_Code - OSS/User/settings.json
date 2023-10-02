@@ -19,6 +19,10 @@
     "files.autoSave": "afterDelay",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/*.o": true,
+        "**/*.so": true
+    },
 
     "explorer.confirmDragAndDrop": false,
 
