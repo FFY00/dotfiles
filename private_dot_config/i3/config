@@ -29,6 +29,9 @@ font pango:CamingoCode Nerd Font Mono 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# set the default layout
+workspace_layout stacking
+
 # start a terminal
 bindsym $mod+Return exec alacritty
 
