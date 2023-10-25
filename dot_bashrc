@@ -1,0 +1,10 @@
+#
+# ~/.bashrc
+#
+
+# If running interactively, and the parent process isn't fish, replace the
+# current process with a fish shell.
+# This changes the default shell, without breaking use-cases such as scripts
+# that expect a POSIX-complient login shell. Skipping this when the parent
+# process is fish lets us still be able to manually spawn a bash shell.
+[[ $- == *i* ]] && grep -vq ^fish /proc/$PPID/comm && exec fish
