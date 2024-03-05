@@ -21,7 +21,8 @@
     "files.trimTrailingWhitespace": true,
     "files.exclude": {
         "**/*.o": true,
-        "**/*.so": true
+        "**/*.so": true,
+        "**/.mypy_cache": true
     },
 
     "explorer.confirmDragAndDrop": false,
