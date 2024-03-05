@@ -33,9 +33,10 @@ eval (dircolors -c ~/.dircolors)
 # OS-specific
 switch (uname)
     case Linux
-        for line in (gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+        for line in (gnome-keyring-daemon --start --components=keyring,pkcs11,secrets)
             set -xU (string split '=' $line)
         end
+        set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
 
     case Darwin
         eval (ssh-agent -c) >/dev/null
