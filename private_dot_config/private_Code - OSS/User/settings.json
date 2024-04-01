@@ -23,6 +23,7 @@
         "**/.mypy_cache": true
     },
 
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
 
     "security.workspace.trust.untrustedFiles": "open",
