@@ -13,8 +13,6 @@
     "editor.rulers": [80, 127],
     "editor.renderWhitespace": "all",
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.tabSize": 8,
-    "editor.insertSpaces": false,
 
     "files.autoSave": "afterDelay",
     "files.insertFinalNewline": true,
