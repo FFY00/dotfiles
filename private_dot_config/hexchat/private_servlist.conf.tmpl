@@ -1,7 +1,7 @@
 v=2.16.2
 
 N=xdevs
-P={{ (bitwarden "item" "xdevs IRC").login.password }}
+P={{ secret "xdevs IRC" }}
 L=6
 E=UTF-8 (Unicode)
 F=91
@@ -294,7 +294,7 @@ D=0
 S=irc.kbfail.net
 
 N=Libera.Chat
-P={{ (bitwarden "item" "libera.chat").login.password }}
+P={{ secret "libera.chat" }}
 L=6
 E=UTF-8 (Unicode)
 F=95
@@ -308,9 +308,9 @@ J=#archlinux
 J=#archlinux-offtopic
 J=#archlinux-projects
 J=#archlinux-pt
-J=#archlinux-staff,{{ (bitwarden "item" "archlinux-staff").notes }}
-J=#archlinux-tu,{{ (bitwarden "item" "archlinux-tu").notes }}
-J=#archlinux-packaging,{{ (bitwarden "item" "archlinux-packaging").notes }}
+J=#archlinux-staff,{{ secret "archlinux-staff" }}
+J=#archlinux-tu,{{ secret "archlinux-tu" }}
+J=#archlinux-packaging,{{ secret "archlinux-packaging" }}
 J=#archlinux-valve
 J=#d
 J=#fwupd
@@ -370,7 +370,7 @@ D=0
 S=irc.oceanius.com
 
 N=OFTC
-P={{ (bitwarden "item" "OFTC IRC").login.password }}
+P={{ secret "OFTC IRC" }}
 L=1
 E=UTF-8 (Unicode)
 F=79
