@@ -1,22 +1,28 @@
 #!/bin/bash
 
+BLUE='\e[34m'
+RESET='\e[0m'
+
+function confirm() {
+  message="$BLUE$@ (y/n):$RESET "
+  read -p "$(echo -e "$message")" -n 1 -s -r < /dev/tty
+
+  if [[ $REPLY != "\n" ]]; then
+    echo $answer
+  fi
+
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo 'Push aborted.'
+    exit 1
+  fi
+}
+
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 PROTECTED_BRANCHES="^(main|master|release-*)"
 
 if [[ "$BRANCH" =~ $PROTECTED_BRANCHES ]]; then
-  read -p "Are you sure you want to push to '$BRANCH' ? (y/n): " -n 1 -r < /dev/tty
-  echo
-  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    echo "Push aborted."
-    exit 1
-  fi
-
-  read -p "Are you *really* sure you want to push to '$BRANCH' ? (y/n): " -n 1 -r < /dev/tty
-  echo
-  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    echo "Push aborted."
-    exit 1
-  fi
+  confirm "Are you sure you want to push to '$BRANCH' ?"
+  confirm "Are you *really* sure you want to push to '$BRANCH' ?"
 fi
 exit 0
 
