@@ -1,0 +1,12 @@
+{{- $global := joinPath .chezmoi.homeDir ".gitignore-global" -}}
+{{- $local := joinPath .chezmoi.homeDir ".gitignore-local" -}}
+
+## Global (~/.gitignore-global)
+
+{{ include $global }}
+
+## Local (machine-specific) (~/.gitignore-local)
+
+{{ if stat $local }}
+	{{- include $local -}}
+{{ end }}
