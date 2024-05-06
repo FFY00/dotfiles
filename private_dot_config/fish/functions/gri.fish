@@ -18,5 +18,12 @@ function gri --wraps='git rebase -i --autosquash'
 		set argv "$fixup_target_parent"
 	end
 
-	command git $args $argv
+	if has-unstaged-files; and bool-prompt 'You have unstaged changes, do you want to stash them?'
+		# Stash unstaged files.
+		run-command git stash --quiet
+		run-command git $args $argv
+		run-command git stash pop --quiet
+	else
+		command git $args $argv
+	end
 end
