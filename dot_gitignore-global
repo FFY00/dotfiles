@@ -38,3 +38,6 @@ fw/
 
 .kdev4/
 *.kdev4
+
+# other
+_draft/
