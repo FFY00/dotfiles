@@ -13,8 +13,8 @@ function gri --wraps='git rebase -i --autosquash'
 			return 1
 		end
 		set fixup_target (commit-from-msg (commit-msg $first_fixup | sed 's/^fixup! //'))
-		set fixup_target_parent (git rev-parse "$fixup_target~1")
-		echo-color dim "Rebasing on the parent of the first fixup: $fixup_target_parent ($(commit-msg $fixup_target_parent))"
+		set fixup_target_parent (commit-parent $fixup_target)
+		echo-color dim "Rebasing on the parent of the first fixup: $(commit-summary $fixup_target_parent)"
 		set argv "$fixup_target_parent"
 	end
 
