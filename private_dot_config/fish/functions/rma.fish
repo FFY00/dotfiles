@@ -1,6 +1,6 @@
 function rma
 	if test (basename (pwd)) = "build"
-		set -lx files * .*
+		set files * .*
 		for file in $files
 			rm -rf $file
 		end

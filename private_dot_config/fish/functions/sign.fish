@@ -5,7 +5,7 @@ function sign
 			command gpg --detach-sign --use-agent --no-armor --yes -u 46F633CBB0EB4BF2 $FILE
 		end
 	end
-	set -lx rm *.sig.sig
+	set rm *.sig.sig
 	if test (count $rm) -ge 1
 		rm *.sig.sig
 	end

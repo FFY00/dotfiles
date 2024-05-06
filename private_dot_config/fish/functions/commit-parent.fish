@@ -1,13 +1,13 @@
 function commit-parent --argument commit num
 	if test -z $commit
-		set -l commit HEAD
+		set commit HEAD
 	end
 	if test -z $num
-		set -l num 1
+		set num 1
 	end
 
-	set -l parent (command git rev-parse "$commit~$num" 2>/dev/null)
-	set -l rev_parse_status $status
+	set parent (command git rev-parse "$commit~$num" 2>/dev/null)
+	set rev_parse_status $status
 	if test $rev_parse_status -eq 0
 		echo $parent
 		return 0

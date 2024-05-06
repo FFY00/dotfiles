@@ -2,10 +2,10 @@
 function mkg
 	updpkgsums
 	#command makepkg -g; or return
-	#set -l sums (makepkg -g 2> /dev/null)
-	#set -l line_count (math (count $sums) - 1)
-	#set -l final ''
-	#set -l i 0
+	#set sums (makepkg -g 2> /dev/null)
+	#set line_count (math (count $sums) - 1)
+	#set final ''
+	#set i 0
 	#for line in $sums
 	#	set final $final$line
 	#	if test $i -lt $line_count

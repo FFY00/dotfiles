@@ -1,11 +1,11 @@
 function gg
 	# config
-	set -l gitdir			~/git
-	set -l find_filter_args		-mindepth 1 -maxdepth 1 -type d -not -name '.*'
-	set -l name_transform_cmd	basename {} \;
-	set -l fzf_args			--preview="ls --color=always $gitdir/{}"
+	set gitdir			~/git
+	set find_filter_args		-mindepth 1 -maxdepth 1 -type d -not -name '.*'
+	set name_transform_cmd	basename {} \;
+	set fzf_args			--preview="ls --color=always $gitdir/{}"
 	# get user input
-	set -l project (
+	set project (
 		begin
 			# add . as an option to allow going to the root
 			echo .

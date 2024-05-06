@@ -3,7 +3,7 @@ function cp-from-aur
 		echo "Missing package name..."
 		return
 	end
-	set -lx file 'PKGBUILD'
+	set file 'PKGBUILD'
 	if [ (count $argv) -ge 2 ]
 		set -x file $argv[2]
 	end

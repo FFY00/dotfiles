@@ -1,4 +1,4 @@
 function rmtar
-	set -lx files *.tar.*
+	set files *.tar.*
 	rm -rf $files
 end

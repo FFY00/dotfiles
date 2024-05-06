@@ -1,4 +1,4 @@
 function rmdeb
-    set -lx files *.deb *.deb.*
+    set files *.deb *.deb.*
     rm -rf $files
 end

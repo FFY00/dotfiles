@@ -4,7 +4,7 @@ function commit-summary --argument commit
 		return 0
 	end
 
-	set -l message (commit-msg $commit)
+	set message (commit-msg $commit)
 	if test $status -eq 0
 		echo "$commit ($message)"
 		return 0

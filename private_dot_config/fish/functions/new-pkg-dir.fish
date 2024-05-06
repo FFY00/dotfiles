@@ -9,7 +9,7 @@ function new-pkg-dir
 		echo "Directory already exists..."
 		return
 	end
-	set -lx dirs $argv[1]/{repos,trunk}
+	set dirs $argv[1]/{repos,trunk}
 	for dir in $dirs
 		if test ! -d $dir
 			mkdir -p $dir
