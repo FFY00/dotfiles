@@ -20,7 +20,6 @@ function ga
 		| cut -d' ' -f2
 	)
 	if test $status -eq 0; and string length -q "$files_to_add"
-		echo git add "$files_to_add"
-		git add $files_to_add
+		run-command git add $files_to_add
 	end
 end
