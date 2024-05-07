@@ -7,12 +7,23 @@ function gri --wraps='git rebase -i --autosquash'
 
 	# If no argument is provided, rebase on the parent of the target of the first fixup commit.
 	if test -z "$argv"
-		set first_fixup (git rev-list --grep=^fixup! --reverse --max-count $max_search_commits HEAD | head -n1)
-		if test -z "$first_fixup"
-			echo-color red "Didn't find a fixup commit in the last $max_commits commits. Please set the rebase target manually." >&2
+		set fixups (git rev-list --grep=^fixup! --max-count $max_search_commits HEAD)
+		if test -z "$fixups"
+			echo-color red "Didn't find a fixup commit in the last $max_search_commits commits. Please set the rebase target manually." >&2
 			return 1
 		end
-		set fixup_target (commit-from-msg (commit-msg $first_fixup | sed 's/^fixup! //'))
+
+		# Find the earliest fixup target.
+		set fixup_target_commit_num (commit-num HEAD)
+		for commit in $fixups
+			set target (commit-from-msg (commit-msg $commit | sed 's/^fixup! //'))
+			set target_commit_num (commit-num $target)
+			if test $target_commit_num -lt $fixup_target_commit_num
+				set fixup_target_commit_num $target_commit_num
+				set fixup_target $target
+			end
+		end
+
 		set fixup_target_parent (commit-parent $fixup_target)
 		echo-color dim "Rebasing on the parent of the first fixup: $(commit-summary $fixup_target_parent)"
 		set argv "$fixup_target_parent"
