@@ -38,7 +38,6 @@
     "mesonbuild.configureOnOpen": false,
 
     "python.defaultInterpreterPath": "/usr/bin/python",
-    "python.linting.mypyEnabled": true,
 
-    "ruff.importStrategy": "useBundled"
+    "ruff.importStrategy": "useBundled",
 }
