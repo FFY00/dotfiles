@@ -35,7 +35,7 @@ function gri --wraps='git rebase -i --autosquash'
 		and run-command git $args $argv
 		and run-command git stash pop --quiet
 	else
-		command git $args $argv
+		run-command git $args $argv
 	end
 	return $status
 end
