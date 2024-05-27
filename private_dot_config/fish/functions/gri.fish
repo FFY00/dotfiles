@@ -32,9 +32,10 @@ function gri --wraps='git rebase -i --autosquash'
 	if has-unstaged-files; and bool-prompt 'You have unstaged files, do you want to stash them?'
 		# Stash unstaged files.
 		run-command git stash --quiet
-		run-command git $args $argv
-		run-command git stash pop --quiet
+		and run-command git $args $argv
+		and run-command git stash pop --quiet
 	else
 		command git $args $argv
 	end
+	return $status
 end
