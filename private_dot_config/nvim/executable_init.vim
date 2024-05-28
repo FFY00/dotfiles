@@ -81,8 +81,10 @@ filetype on
 filetype indent on
 
 " Disable background color to make honor transparency
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight EndOfBuffer ctermbg=NONE guibg=NONE
+highlight LineNr ctermbg=NONE guibg=NONE
 
 " Show tabs, whitespaces, etc.
 set list
