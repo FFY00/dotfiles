@@ -25,7 +25,7 @@ function gri --wraps='git rebase -i --autosquash'
 		end
 
 		set fixup_target_parent (commit-parent $fixup_target)
-		echo-color dim "Rebasing on the parent of the first fixup: $(commit-summary $fixup_target_parent)"
+		echo-color blue "Rebasing on the parent of the first fixup: $(commit-summary $fixup_target_parent)"
 		set argv "$fixup_target_parent"
 	end
 
