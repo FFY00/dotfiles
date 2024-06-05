@@ -29,13 +29,13 @@ function gri --wraps='git rebase -i --autosquash'
 		set argv "$fixup_target_parent"
 	end
 
-	if has-unstaged-files; and bool-prompt 'You have unstaged files, do you want to stash them?'
+	if not has-unstaged-files; or not bool-prompt 'You have unstaged files, do you want to stash them?'
+		run-command git $args $argv
+	else
 		# Stash unstaged files.
 		run-command git stash --quiet
 		and run-command git $args $argv
 		and run-command git stash pop --quiet
-	else
-		run-command git $args $argv
 	end
 	return $status
 end

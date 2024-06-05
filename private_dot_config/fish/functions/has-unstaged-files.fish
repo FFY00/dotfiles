@@ -1,5 +1,6 @@
 function has-unstaged-files --wraps='git diff --quiet'
-	if git diff --quiet $argv
+	command git diff --quiet $argv
+	if test $status -eq 0
 		return 1
 	else
 		return 0
