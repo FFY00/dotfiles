@@ -13,6 +13,11 @@ function fzf-cd --argument dir
 		# use --print-query (and then tail -n1) to allow arbitrary input
 		end | fzf --print-query $fzf_args | tail -n1
 	)
+	# directory doesn't exist
+	if ! test -e $project
+		echo $project
+		return 1
+	end
 	# change directory
 	if ! test -z $project
 		# cd to $dir first to leave the user there if $project doesn't exist
