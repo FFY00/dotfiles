@@ -11,17 +11,17 @@ function fzf-cd --argument dir
 			# find
 			find $dir $find_filter_args -exec $name_transform_cmd
 		# use --print-query (and then tail -n1) to allow arbitrary input
-		end | fzf --print-query $fzf_args | tail -n1
+		end 2>/dev/null | fzf --print-query $fzf_args | tail -n1
 	)
 	# directory doesn't exist
-	if ! test -e $project
+	if ! test -e $dir/$project
 		echo $project
+		# cd to $dir first to leave the user there if $project doesn't exist
+		cd $dir
 		return 1
 	end
 	# change directory
 	if ! test -z $project
-		# cd to $dir first to leave the user there if $project doesn't exist
-		cd $dir
-		cd $project
+		cd $dir/$project
 	end
 end
