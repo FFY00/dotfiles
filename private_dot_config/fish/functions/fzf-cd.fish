@@ -9,7 +9,7 @@ function fzf-cd --argument dir
 			# add . as an option to allow going to the root
 			echo .
 			# find
-			find $dir $find_filter_args -exec $name_transform_cmd
+			find -L $dir $find_filter_args -exec $name_transform_cmd
 		# use --print-query (and then tail -n1) to allow arbitrary input
 		end 2>/dev/null | fzf --print-query $fzf_args | tail -n1
 	)
