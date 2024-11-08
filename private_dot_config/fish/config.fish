@@ -1,6 +1,9 @@
 # Set fish settings
 set -g fish_greeting
 
+# Enable /usr/local libraries
+set -ax LD_LIBRARY_PATH /usr/local/lib
+
 # Set PATH
 set -ax PATH ~/.local/bin
 set -ax PATH ~/.cargo/bin
