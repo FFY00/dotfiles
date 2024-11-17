@@ -17,7 +17,7 @@ function ga
 		git $git_args status -s $files 2>/dev/null \
 		| sed -e "/^$ctrseq*\S$ctrseq*\s/d" -e 's/"//' -e 's/"$//' \
 		| fzf -m --ansi $fzf_args \
-		| sed -e 's/^\s//' -e 's/\s+/ /g' -e 's/^.*.* //'
+		| sed 's/^...//'
 	)
 	if test $status -eq 0; and string length -q "$files_to_add"
 		run-command git add $files_to_add
