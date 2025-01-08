@@ -21,6 +21,7 @@ Plug 'vim-airline/vim-airline'		" Airline - Status Bar
 Plug 'vim-airline/vim-airline-themes'	" Themes for Airline
 Plug 'raphamorim/lucario'		" Lucario colorscheme
 Plug 'ryanoasis/vim-devicons'		" Adds icons
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}	" Treesitter syntax highlighting
 
 " Custom funcionality
 Plug 'tpope/vim-sleuth'			" Automatically adapt to current indentation
@@ -64,6 +65,26 @@ call plug#end()
 "
 " Native config
 "
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { 'python', 'c', 'bash' },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+
+    -- Disable highlighting on large files
+    disable = function(lang, buf)
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+            return true
+        end
+    end,
+  }
+}
+EOF
 
 " Alias
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
