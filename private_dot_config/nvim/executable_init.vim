@@ -19,7 +19,7 @@ Plug 'rbgrouleff/bclose.vim'
 " Theme
 Plug 'vim-airline/vim-airline'		" Airline - Status Bar
 Plug 'vim-airline/vim-airline-themes'	" Themes for Airline
-Plug 't1mxg0d/vim-lucario'		" Lucario colorscheme
+Plug 'raphamorim/lucario'		" Lucario colorscheme
 Plug 'ryanoasis/vim-devicons'		" Adds icons
 
 " Custom funcionality
