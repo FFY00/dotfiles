@@ -21,6 +21,8 @@
 	gpgsign = true
 [log]
 	utf8 = true
+[blame]
+	coloring = highlightRecent
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
