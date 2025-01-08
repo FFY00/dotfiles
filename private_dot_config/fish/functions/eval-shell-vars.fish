@@ -19,6 +19,11 @@ function eval-shell-vars
 			# Set allexport so that all variables are exported
 			set shell_before 'set -o allexport'
 		case csh
+			# If we don't need -U/--universal, we can just eval the expression directly in fish
+			if test -z $_flag_universal
+				eval "$argv" >/dev/null
+				return $status
+			end
 		case '*'
 			echo-color red "Unsupported shell '$_flag_shell' (supported: sh, bash, csh)"
 	end
