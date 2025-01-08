@@ -43,12 +43,15 @@ dircolors -c ~/.dircolors | eval-shell-vars --shell=csh
 # OS-specific
 switch (uname)
     case Linux
-        gnome-keyring-daemon --start --components=keyring,pkcs11,secrets | eval-shell-vars -U
+        # Configure GCR as the ssh agent
         set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
+        # Use gnome-keyring-daemon for the keyring
+        gnome-keyring-daemon --start --components=keyring,pkcs11,secrets | eval-shell-vars -U
 
     case Darwin
+        # Start ssh-agent
         ssh-agent -c | eval-shell-vars --shell=csh
-
+        # Homebrew paths
         set -ax PATH /opt/homebrew/opt/python@3.11/libexec/bin
         set -ax PATH /opt/homebrew/opt/coreutils/libexec/gnubin
         set -ax PATH /opt/homebrew/bin
