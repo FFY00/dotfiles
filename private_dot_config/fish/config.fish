@@ -38,18 +38,16 @@ set -x QT_QPA_PLATFORMTHEME qt5ct
 set -x QT_AUTO_SCREEN_SCALE_FACTOR 0
 
 # Set dynamic variables
-eval (dircolors -c ~/.dircolors)
+dircolors -c ~/.dircolors | eval-shell-vars --shell=csh
 
 # OS-specific
 switch (uname)
     case Linux
-        for line in (gnome-keyring-daemon --start --components=keyring,pkcs11,secrets)
-            set -xU (string split '=' $line)
-        end
+        gnome-keyring-daemon --start --components=keyring,pkcs11,secrets | eval-shell-vars -U
         set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
 
     case Darwin
-        eval (ssh-agent -c) >/dev/null
+        ssh-agent -c | eval-shell-vars --shell=csh
 
         set -ax PATH /opt/homebrew/opt/python@3.11/libexec/bin
         set -ax PATH /opt/homebrew/opt/coreutils/libexec/gnubin
