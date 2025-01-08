@@ -1,3 +1,7 @@
+if not status is-interactive
+    return
+end
+
 # Set fish settings
 set -g fish_greeting
 
