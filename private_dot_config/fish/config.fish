@@ -31,6 +31,7 @@ switch (uname)
         # Homebrew paths
         set -ax PATH /opt/homebrew/opt/python@3.11/libexec/bin
         set -ax PATH /opt/homebrew/opt/coreutils/libexec/gnubin
+        set -ax PATH /opt/homebrew/opt/make/libexec/gnubin
         set -ax PATH /opt/homebrew/bin
         # Platform configuration
         set CCACHE_BINDIR /opt/homebrew/opt/ccache/libexec
