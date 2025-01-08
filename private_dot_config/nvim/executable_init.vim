@@ -80,6 +80,9 @@ set pastetoggle=<F2>		" Map F2 to toggle paste mode
 filetype on
 filetype indent on
 
+" Disable highlighting on large files
+autocmd Filetype * if getfsize(@%) > 100 * 1024 | setlocal syntax=OFF | endif
+
 " Disable background color to make honor transparency
 highlight Normal ctermbg=NONE guibg=NONE
 highlight NonText ctermbg=NONE guibg=NONE
