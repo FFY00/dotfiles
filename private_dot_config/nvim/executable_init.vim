@@ -27,7 +27,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}	" Treesitter syntax 
 Plug 'tpope/vim-sleuth'			" Automatically adapt to current indentation
 Plug 'bogado/file-line'			" Allows vim/nvim file.txt:20 where 20 is the line number
 Plug 'RRethy/vim-illuminate'		" Highlights other ocurrences of the word bellow the cursor:h
-Plug 'lilydjwg/colorizer'		" Add color to #556677 or rbg(50, 100, 200) tags
+Plug 'norcalli/nvim-colorizer.lua'	" Add color to #556677 or rbg(50, 100, 200) tags
 Plug 'airblade/vim-gitgutter'		" Shows git differences when editing the file
 Plug 'Raimondi/delimitMate'		" Autoclose parentheses, quotes, etc.
 Plug 'jamessan/vim-gnupg'		" Transparent editing of GPG files
@@ -101,6 +101,7 @@ set number relativenumber	" Show line numbers
 colorscheme lucario		" Set colorscheme
 set mouse=			" Disable mouse integration
 set pastetoggle=<F2>		" Map F2 to toggle paste mode
+set termguicolors		" Enable 24-bit colors (needed for colorizer)
 
 " Enable file type detection and type-based indent settings
 filetype on
@@ -123,6 +124,10 @@ set showbreak=↪
 "
 " Plugin configs
 "
+
+" Colorizer
+
+lua require'colorizer'.setup()
 
 " Airline
 let g:airline_theme='jellybeans'	" Set Airline theme
