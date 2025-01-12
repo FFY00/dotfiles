@@ -70,31 +70,6 @@ let g:load_black=1
 " Native config
 "
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'python', 'c', 'bash' },
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    disable = function(lang, buf)
-        -- Disable languages
-        for i, value in pairs({ 'git_rebase' }) do
-          if string.match(lang, value) then
-            return true
-          end
-        end
-        -- Disable highlighting on large files
-        local max_filesize = 100 * 1024 -- 100 KB
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        if ok and stats and stats.size > max_filesize then
-            return true
-        end
-    end,
-  }
-}
-EOF
-
 " Alias
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command Wq :execute ':silent w !sudo tee % > /dev/null' | :q!
@@ -128,6 +103,33 @@ set showbreak=↪
 "
 " Plugin configs
 "
+
+" Treesitter
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { 'python', 'c', 'bash' },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    disable = function(lang, buf)
+        -- Disable languages
+        for i, value in pairs({ 'git_rebase' }) do
+          if string.match(lang, value) then
+            return true
+          end
+        end
+        -- Disable highlighting on large files
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+            return true
+        end
+    end,
+  }
+}
+EOF
 
 " Colorizer
 
