@@ -1,0 +1,14 @@
+[Unit]
+Description=qBittorrent-nox service
+Documentation=man:qbittorrent-nox(1)
+Wants=network-online.target
+After=network-online.target nss-lookup.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/qbittorrent-nox
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=default.target
