@@ -33,6 +33,7 @@ Plug 'Raimondi/delimitMate'		" Autoclose parentheses, quotes, etc.
 Plug 'jamessan/vim-gnupg'		" Transparent editing of GPG files
 Plug 'terryma/vim-multiple-cursors'	" Multiple cursors
 Plug 'Houl/repmo-vim'			" Allow to repeat motions
+Plug 'dstein64/vim-startuptime'		" Debug startup time
 
 " Tool support
 Plug 'tpope/vim-git'			" Git support
