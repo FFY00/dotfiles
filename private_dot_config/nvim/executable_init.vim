@@ -63,6 +63,9 @@ Plug 'wakatime/vim-wakatime'		" Wakatime
 
 call plug#end()
 
+" Disable system-wide plugins
+let g:load_black=1
+
 "
 " Native config
 "
