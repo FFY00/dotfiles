@@ -57,6 +57,7 @@ set -ax FZF_DEFAULT_OPTS --color=bg+:-1  # clear the background color, looks bet
 set -x VIRTUAL_ENV_DISABLE_PROMPT true
 set -x GPG_TTY tty
 set -x FORCE_COLOR 1
+set -x PYTHON_FROZEN_MODULES off
 ## Qt
 set -x QT_QPA_PLATFORMTHEME qt5ct
 set -x QT_AUTO_SCREEN_SCALE_FACTOR 0
