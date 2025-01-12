@@ -86,8 +86,8 @@ set termguicolors		" Enable 24-bit colors (needed for colorizer)
 filetype on
 filetype indent on
 
-" Disable highlighting on large files
-autocmd Filetype * if getfsize(@%) > 100 * 1024 | setlocal syntax=OFF | endif
+" Disable highlighting on large files (>1MB)
+autocmd Filetype * if getfsize(@%) > 1024 * 1024 | setlocal syntax=OFF | endif
 
 " Disable background color to make honor transparency
 highlight Normal ctermbg=NONE guibg=NONE
@@ -121,7 +121,7 @@ require'nvim-treesitter.configs'.setup {
           end
         end
         -- Disable highlighting on large files
-        local max_filesize = 100 * 1024 -- 100 KB
+        local max_filesize = 1024 * 1024 -- 1MB
         local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
         if ok and stats and stats.size > max_filesize then
             return true
