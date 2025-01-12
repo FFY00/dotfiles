@@ -16,5 +16,5 @@ fi
 # If the Signed-off-by isn't already present on the commit, add it.
 grep Signed-off-by "$1" || git interpret-trailers \
     --if-exists doNothing \
-    --trailer "Signed-off-by: $NAME <$EMAIL" \
+    --trailer "Signed-off-by: $NAME <$EMAIL>" \
     --in-place "$1"
