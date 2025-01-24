@@ -7,7 +7,7 @@ function gri --wraps='git rebase -i --autosquash'
 
 	# If no argument is provided, rebase on the parent of the target of the first fixup commit.
 	if test -z "$argv"
-		set fixups (git rev-list --grep=^fixup! --max-count $max_search_commits HEAD)
+		set fixups (git rev-list --grep=^fixup! HEAD~$max_search_commits...HEAD)
 		if test -z "$fixups"
 			echo-color red "Didn't find a fixup commit in the last $max_search_commits commits. Please set the rebase target manually." >&2
 			return 1
