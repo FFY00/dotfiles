@@ -62,6 +62,7 @@ _IPYTHON_AUTO_IMPORT_MODULES = [
     'profile',
     'py_compile',
     'pydoc',
+    're',
     'runpy',
     'select',
     'selectors',
