@@ -1,9 +1,11 @@
 function gri --wraps='git rebase -i --autosquash'
 	set args rebase -i --autosquash
+	
+	set fixup_target_commit_num (commit-num HEAD)
 
 	# Only consider the last X commits when searching for the first fixup commit.
 	# This avoids messing with older commits already present in the history.
-	set max_search_commits 30
+	set max_search_commits (math "min($fixup_target_commit_num-1,30)")
 
 	# If no argument is provided, rebase on the parent of the target of the first fixup commit.
 	if test -z "$argv"
@@ -14,7 +16,6 @@ function gri --wraps='git rebase -i --autosquash'
 		end
 
 		# Find the earliest fixup target.
-		set fixup_target_commit_num (commit-num HEAD)
 		for commit in $fixups
 			set target (commit-from-msg (commit-msg $commit | sed 's/^fixup! //'))
 			set target_commit_num (commit-num $target)
