@@ -21,7 +21,7 @@ switch (uname)
         # Configure GCR as the ssh agent
         set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
         # Use gnome-keyring-daemon for the keyring
-        gnome-keyring-daemon --start --components=keyring,pkcs11,secrets | eval-shell-vars -U
+        gnome-keyring-daemon --start --components=keyring,pkcs11,secrets 2>/dev/null | eval-shell-vars -U
         # Platform configuration
         set CCACHE_BINDIR /usr/lib/ccache/bin
 
