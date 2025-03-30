@@ -79,7 +79,6 @@ syntax enable			" Enable syntax
 set number relativenumber	" Show line numbers
 colorscheme lucario		" Set colorscheme
 set mouse=			" Disable mouse integration
-set pastetoggle=<F2>		" Map F2 to toggle paste mode
 set termguicolors		" Enable 24-bit colors (needed for colorizer)
 
 " Enable file type detection and type-based indent settings
