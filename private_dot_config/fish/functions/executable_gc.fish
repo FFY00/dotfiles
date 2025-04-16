@@ -1,11 +1,10 @@
-function gc --description 'Clone repo and cd into it'
-    set repo $argv[1]
-    set name (basename $repo .git)
-    if [ (count $argv) -eq 2 ]
-        set name $argv[2]
+function gc --description 'Clone repo and cd into it' --argument repo --argument name
+    if test -z $name
+        set name (basename $repo .git)
     end
 
-    command git clone $repo $name
-    and echo "Changing directory..."
-    and cd $name
+    run-command git clone $repo $name || return
+
+    echo "Changing directory..."
+    cd $name
 end
