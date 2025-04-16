@@ -27,6 +27,7 @@ lcov-report/
 
 codecov.sh
 *.bak
+*.bak.*
 #*.lock
 tox.ini
 
