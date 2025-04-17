@@ -1,4 +1,3 @@
 function gg
-	fzf-cd ~/git
-	return $status
+	fzf-cd ~/git 'git clone' 'basename -s .git'
 end
