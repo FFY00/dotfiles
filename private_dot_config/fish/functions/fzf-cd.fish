@@ -1,8 +1,15 @@
-function fzf-cd --argument dir
+function fzf-cd --argument dir --argument-names cmd_create --argument-names cmd_directory
 	# config
 	set find_filter_args		-mindepth 1 -maxdepth 1 -type d -not -name '.*'
-	set name_transform_cmd	basename {} \;
-	set fzf_args			--preview="ls --color=always $dir/{}"
+	set name_transform_cmd		basename {} \;
+	if test -z cmd_create
+		set fzf_enter_action accept-or-print-query
+	else
+		set fzf_enter_action "transform:fzf-create '{q}' '{}' 'cd '$dir'; and $cmd_create' '$cmd_directory'"
+	end
+	set -a fzf_args			--preview="ls --color=always '$dir/{}'"
+	set -a fzf_args			--with-shell='fish -c'
+	set -a fzf_args			--bind="enter:$fzf_enter_action"
 	# get user input
 	set project (
 		begin
@@ -10,8 +17,7 @@ function fzf-cd --argument dir
 			echo .
 			# find
 			find -L $dir $find_filter_args -exec $name_transform_cmd
-		# use --print-query (and then tail -n1) to allow arbitrary input
-		end 2>/dev/null | fzf --print-query $fzf_args | tail -n1
+		end 2>/dev/null | fzf $fzf_args
 	)
 	# directory doesn't exist
 	if ! test -e $dir/$project
