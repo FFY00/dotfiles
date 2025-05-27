@@ -29,6 +29,7 @@ codecov.sh
 *.bak
 *.bak.*
 #*.lock
+uv.lock
 tox.ini
 
 *.pkg.*
