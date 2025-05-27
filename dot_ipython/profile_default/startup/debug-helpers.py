@@ -1,7 +1,7 @@
 class helpers:
     def dir(obj: object, dunder: bool = True):
         ignore_list = {'__builtins__'}
-        data {
+        data = {
             attr: getattr(obj, attr)
             for attr in dir(obj)
             if dunder or attr.startswith('__')
