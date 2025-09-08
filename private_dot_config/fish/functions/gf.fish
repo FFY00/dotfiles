@@ -1,3 +1,3 @@
 function gf
-	command git commit -S --fixup $argv
+	command git commit --fixup $argv
 end
