@@ -1,1 +1,4 @@
 priv_esc = 'sudo'
+
+[git]
+gpgsign = false
