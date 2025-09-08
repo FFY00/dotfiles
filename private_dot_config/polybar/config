@@ -256,13 +256,13 @@ label-close = Cancel
 label-separator = " | "
 
 menu-0-0 = Hibernate
-menu-0-0-exec = menu-open-1
+menu-0-0-exec = #powermenu-open-1
 menu-0-1 = Reboot
-menu-0-1-exec = menu-open-2
+menu-0-1-exec = #powermenu.open.2
 menu-0-2 = Power Off
-menu-0-2-exec = menu-open-3
+menu-0-2-exec = #powermenu-open-3
 menu-0-3 = Log Off
-menu-0-3-exec = menu-open-4
+menu-0-3-exec = #powermenu-open-4
 
 menu-1-0 = Hibernate
 menu-1-0-exec = systemctl hibernate
