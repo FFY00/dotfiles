@@ -114,4 +114,7 @@ _IPYTHON_AUTO_IMPORT_MODULES = [
 ]
 
 for name in _IPYTHON_AUTO_IMPORT_MODULES:
-    locals()[name] = importlib.import_module(name)
+    try:
+        locals()[name] = importlib.import_module(name)
+    except Exception as e:
+        warnings.warn(f'{e.__class__.__name__}: {e!s}')
