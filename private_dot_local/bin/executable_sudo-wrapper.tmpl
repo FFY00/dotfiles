@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cmd={{ .priv_esc }}
+cmd_interactive=sudo
+
+[ $# -eq 0 ] && exit 1
+[ -t 0 ] && cmd=$cmd_interactive
+exec /usr/bin/$cmd $@
