@@ -71,8 +71,8 @@ let g:load_black=1
 "
 
 " Alias
-command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-command Wq :execute ':silent w !sudo tee % > /dev/null' | :q!
+command W :execute ':silent w !sudo-wrapper tee % > /dev/null' | :edit!
+command Wq :execute ':silent w !sudo-wrapper tee % > /dev/null' | :q!
 
 " Custom
 syntax enable			" Enable syntax
