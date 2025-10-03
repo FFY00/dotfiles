@@ -15,7 +15,15 @@ function echo-color
 			set -a set_color_args $entry
 		end
 	end
+	set color (set_color $set_color_args)
+	set reset (set_color normal)
 
-	set_color $set_color_args; and echo $echo_args
-	set_color normal
+	# If no arguments were passed to echo, read from stdin instead, but insert the
+	# reset sequence in the last line, so that it does not start a new line.
+	if test -z $echo_args
+		set_color $set_color_args; and sed -z 's/\n$/'$(set_color normal)'\n/' <&0
+	else
+		set_color $set_color_args; and echo $echo_args
+		set_color normal
+	end
 end
