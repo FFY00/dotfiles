@@ -16,7 +16,7 @@ function fzf-cd --argument dir --argument-names cmd_create --argument-names cmd_
 			# add . as an option to allow going to the root
 			echo .
 			# find
-			find -L $dir $find_filter_args -exec $name_transform_cmd
+			find -L $dir $find_filter_args -exec $name_transform_cmd &
 		end 2>/dev/null | fzf $fzf_args
 	)
 	# directory doesn't exist
