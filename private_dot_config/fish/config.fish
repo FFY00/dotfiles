@@ -9,6 +9,7 @@ set -g fish_greeting
 set -ax PATH ~/.local/bin
 set -ax PATH ~/.cargo/bin
 set -ax PATH ~/.cabal/bin
+set -ax PATH ~/.pixi/bin
 set -ax PATH ~/.dotnet/tools
 set -ax PATH ~/go/bin
 
