@@ -27,7 +27,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}	" Treesitter syntax 
 Plug 'tpope/vim-sleuth'			" Automatically adapt to current indentation
 Plug 'bogado/file-line'			" Allows vim/nvim file.txt:20 where 20 is the line number
 Plug 'RRethy/vim-illuminate'		" Highlights other ocurrences of the word bellow the cursor:h
-Plug 'norcalli/nvim-colorizer.lua'	" Add color to #556677 or rbg(50, 100, 200) tags
+Plug 'catgoose/nvim-colorizer.lua'	" Add color to #556677 or rbg(50, 100, 200) tags
 Plug 'airblade/vim-gitgutter'		" Shows git differences when editing the file
 Plug 'Raimondi/delimitMate'		" Autoclose parentheses, quotes, etc.
 Plug 'jamessan/vim-gnupg'		" Transparent editing of GPG files
