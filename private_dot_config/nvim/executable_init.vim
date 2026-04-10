@@ -106,28 +106,7 @@ set showbreak=↪
 " Treesitter
 
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'python', 'c', 'bash' },
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    disable = function(lang, buf)
-        -- Disable languages
-        for i, value in pairs({ 'git_rebase' }) do
-          if string.match(lang, value) then
-            return true
-          end
-        end
-        -- Disable highlighting on large files
-        local max_filesize = 1024 * 1024 -- 1MB
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        if ok and stats and stats.size > max_filesize then
-            return true
-        end
-    end,
-  }
-}
+require('nvim-treesitter').install { 'python', 'c', 'bash' }
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { '<filetype>' },
