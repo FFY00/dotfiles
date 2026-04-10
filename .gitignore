@@ -1,3 +1,4 @@
 private_dot_config/fish/functions/__fish_*_complete.fish
 private_dot_config/fish/functions/*-wip.fish
+private_dot_config/fish/functions/symlink_*.fish
 .chezmoidata/machine.toml
