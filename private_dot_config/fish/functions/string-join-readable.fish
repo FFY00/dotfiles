@@ -1,27 +1,29 @@
 function string-join-readable
-	set -l separator ', '
-	set -l last_separator ', and '
-	set -l prefix ''
-	set -l suffix ''
+	argparse h/help s/separator= l/last-separator= style= separator-style= prefix= suffix= -- $argv
 
-	argparse h/help s/separator= l/last-separator= prefix= suffix= -- $argv
+	if arg-set separator ', '
+		arg-set last_separator $separator
+	else
+		arg-set last_separator ', and '
+	end
+	arg-set style normal
+	arg-set separator_style normal
+	arg-set prefix
+	arg-set suffix
 
 	if set -ql _flag_h
 		echo "usage: $_ [OPTION]... [ITEM]..."
 		echo
-		echo "  -s, --separator=SEP        separator used for all but the last item (defaults to '$separator')"
-		echo "  -l, --last-separator=SEP   separator used for the last item (if -s/--separator is specified, defaults to its value, otherwise '$last_separator')"
+		echo "  -s, --separator=SEP        separator used for all but the last item (defaults to '$_flag_separator_default')"
+		echo "  -l, --last-separator=SEP   separator used for the last item (if -s/--separator is specified, defaults to its value, otherwise '$_flag_last_separator_default')"
+		echo "      --style=NAME           style string to be applied to the item (as in echo-color)"
+		echo "      --separator-style=NAME style string to be applied to the item (as in echo-color)"
 		echo "      --prefix=VALUE         prepend value to each item"
 		echo "      --suffix=VALUE         append value to each item"
 		echo
 		echo "If no ITEMs are provided, read standard input."
 		return 1
 	end >&2
-
-	set -ql _flag_s; and set separator $_flag_s; and set last_separator $_flag_s
-	set -ql _flag_l; and set last_separator $_flag_l
-	set -ql _flag_prefix; and set prefix "$_flag_prefix"
-	set -ql _flag_suffix; and set suffix "$_flag_suffix"
 
 	test (count $argv) -gt 0
 	and set -l items $argv
@@ -30,12 +32,14 @@ function string-join-readable
 	switch (count $items)
 		case 0
 		case 1
-			printf '%s%s%s\n' $prefix $items[1] $suffix
+			echo-color $style -s $prefix $items[1] $suffix
 		case '*'
-			printf '%s%s%s' $prefix $items[1] $suffix
+			echo-color $style -sn $prefix $items[1] $suffix
 			for item in $items[2..-2]
-				printf '%s%s%s%s' $separator $prefix $item $suffix
+				echo-color $separator_style -n $separator
+				echo-color $style -sn $prefix $item $suffix
 			end
-			printf '%s%s%s%s\n' $last_separator $prefix $items[-1] $suffix
+			echo-color $separator_style -n $last_separator
+			echo-color $style -s $prefix $items[-1] $suffix
 	end
 end
