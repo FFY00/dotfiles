@@ -24,10 +24,12 @@ function echo-color
 
 	# If no arguments were passed to echo, read from stdin instead, but insert the
 	# reset sequence in the last line, so that it does not start a new line.
-	if test -z $echo_args
-		set_color $set_color_args; and sed -z 's/\n$/'$(set_color normal)'\n/' <&0
-	else
-		set_color $set_color_args; and echo $echo_args
-		set_color normal
-	end
+	echo -n $color
+	begin
+		if test -z "$echo_args"
+			cat
+		else
+			echo $echo_args
+		end
+	end | sed -rz 's/(\n?)$/'$reset'\1/'
 end
