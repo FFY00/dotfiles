@@ -23,7 +23,6 @@ function load-env --argument-names file
 	if test -z $exported_vars
 		echo 'no variables loaded'
 	else
-		#echo " loaded $(string join ', ' $exported_vars)"
-		echo " loaded $(string-join-readable --prefix $(set_color yellow) --suffix $(set_color normal) $exported_vars)"
+		echo "loaded $(string-join-readable --style yellow $exported_vars)"
 	end
 end
