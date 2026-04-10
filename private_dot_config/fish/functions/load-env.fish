@@ -13,11 +13,10 @@ function load-env --argument-names file
 	end
 
 	# Export variables from file
-	echo -n "Reading $(string escape $file | echo-color bold)..."
-	for line in (sed $filters $file)
-		set parts (string split --max 1 '=' $line)
-		set -gx $parts
-		set -a exported_vars $parts[1]
+	echo -n "Reading $(string escape $file | echo-color bold)... "
+	sed $filters $file | while read -d= name value
+		set -gx $name $value
+		set -a exported_vars $name
 	end
 
 	# Print exported
