@@ -1,15 +1,7 @@
 function run-command
-	# Build a shell-escaped version of the command
-	for arg in $argv
-		switch "$arg"
-			case '* *'
-				set -a repr "'$arg'"
-			case '*'
-				set -a repr "$arg"
-		end
-	end
-	# Print and execute command
-	echo-color dim "\$ $repr"
-	command $argv
+	# Print and execute command.
+	# In case there are paths in the arguments, try un-expanding ~.
+	echo-color dim "\$ $(string escape -- $argv | string replace $HOME '~' | string join ' ')"
+	$argv
 	return $status
 end
