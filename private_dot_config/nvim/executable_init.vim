@@ -128,6 +128,11 @@ require'nvim-treesitter.configs'.setup {
     end,
   }
 }
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '<filetype>' },
+  callback = function() vim.treesitter.start() end,
+})
 EOF
 
 " Colorizer
