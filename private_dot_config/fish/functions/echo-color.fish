@@ -19,7 +19,7 @@ function echo-color
 			set -a set_color_args $entry
 		end
 	end
-	set color (set_color $set_color_args)
+	set color (set_color $set_color_args); or return
 	set reset (set_color normal)
 
 	# If no arguments were passed to echo, read from stdin instead, but insert the
