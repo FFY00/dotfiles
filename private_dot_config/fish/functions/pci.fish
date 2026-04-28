@@ -1,5 +1,5 @@
 function pci
-	GIT_CONFIG_GLOBAL= pre-commit install
+	GIT_CONFIG_GLOBAL= prek install
 
 	# This shouldn't be needeed now that we have a global pre-commit hook that runs the local one
 	#

@@ -1,3 +1,3 @@
 function pca
-command pre-commit run --all-files
+	command prek run --all-files
 end
