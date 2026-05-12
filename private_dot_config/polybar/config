@@ -1,3 +1,6 @@
+[settings]
+screenchange-reload = true
+
 ; Top bar
 [bar/top]
 width = 100%
